@@ -30,8 +30,10 @@
     <div class="container">
 
         <div class="section-title">
-        <h2>App Features</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <h2>Fitur</h2>
+        <p>Website ini memiliki fitur utama dalam cek penyakit jantung dengan berdasar pada Algoritma K-Means dan Naive Bayes. Tujuan dari 
+          algoritma K-Means adalah untuk meningkatkan efisiensi dalam pengolahan data dan memudahkan pengambilan keputusan. 
+          Naive Bayes menggunakan metode probabilistik untuk menghitung probabilitas terjadinya suatu kejadian berdasarkan informasi yang tersedia.</p>
         </div>
 
         <div class="row no-gutters">
@@ -40,23 +42,23 @@
             <div class="row">
                 <div class="col-md-6 icon-box" data-aos="fade-up">
                 <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4>K-Means</h4>
+                    <p>Cek penyakit jantung dengan menggunakan algoritma K-Means</p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                 <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris nisi</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h4>Naive Bayes</h4>
+                    <p>Cek penyakit jantung dengan menggunakan algoritma Naive Bayes</p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                 <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4>Solusi umum</h4>
+                    <p>Menampilkan sebuah solusi dari hasil yang didapat dengan solusi umum </p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="bx bx-shield"></i>
-                    <h4>Beatae veritatis</h4>
-                    <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                    <h4>Rekomendasi Obat</h4>
+                    <p>Menampilkan sebuah rekomendasi obat berdasarkan hasil yang didapat</p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                 <i class="bx bx-atom"></i>
@@ -88,19 +90,15 @@
             <img src="assets/img/details-1.png" class="img-fluid" alt="">
         </div>
         <div class="col-md-8 pt-4" data-aos="fade-up">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
-                </p>
-            <ul>
-                <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check"></i> Iure at voluptas aspernatur dignissimos doloribus repudiandae.</li>
-                <li><i class="bi bi-check"></i> Est ipsa assumenda id facilis nesciunt placeat sed doloribus praesentium.</li>
-            </ul>
+            <h3>Algoritma K-Means</h3>
             <p>
-                Voluptas nisi in quia excepturi nihil voluptas nam et ut. Expedita omnis eum consequatur non. Sed in asperiores aut repellendus. Error quisquam ab maiores. Quibusdam sit in officia
+              K-Means dapat digunakan dalam cek penyakit jantung untuk melakukan pengelompokan atau clustering data berdasarkan karakteristik pasien yang memiliki risiko penyakit jantung yang sama. Dengan K-Means, data pasien dapat dikelompokkan ke dalam beberapa kelompok atau cluster berdasarkan kemiripan karakteristik tertentu.
+            </p>
+            <p>
+              Tujuan dari penggunaan K-Means dalam cek penyakit jantung adalah untuk membantu dalam mengidentifikasi kelompok pasien yang berisiko tinggi terkena penyakit jantung. Dalam website ini, K-Means dikelompokkan  berdasarkan faktor risiko tertentu, yaitu tekanan darah, kadar kolestrol, dan detak jantung maksimal.
+            </p>
+            <p>
+              Tujuan dari penggunaan K-Means dalam cek penyakit jantung adalah untuk membantu dokter atau tenaga medis dalam mengambil keputusan yang lebih baik dan lebih efektif dalam menangani pasien dengan risiko penyakit jantung. Selain itu, K-Means dapat membantu pasien untuk memperoleh pemahaman yang lebih baik mengenai risiko kesehatan mereka dan memperbaiki gaya hidup untuk mencegah terjadinya penyakit jantung.
             </p>
         </div>
         </div>
@@ -110,18 +108,18 @@
             <img src="assets/img/details-2.png" class="img-fluid" alt="">
         </div>
             <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-                <h3>Corporis temporibus maiores provident</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
+                <h3>Algoritma Naive Bayes</h3>
+                    <p>
+                      Tujuan dari menggunakan algoritma Naive Bayes dalam cek penyakit jantung adalah untuk membantu dalam melakukan pengecekan risiko terkena penyakit jantung berdasarkan data riwayat kesehatan dan faktor risiko.
                     </p>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
+                      Dalam hal ini, Naive Bayes digunakan untuk memprediksi kemungkinan seseorang terkena penyakit jantung berdasarkan faktor-faktor risiko yang telah diketahui sebelumnya, yaitu tekanan darah, kadar kolestrol, dan detak jantung maksimum.
                     </p>
                     <p>
-                        Inventore id enim dolor dicta qui et magni molestiae. Mollitia optio officia illum ut cupiditate eos autem. Soluta dolorum repellendus repellat amet autem rerum illum in. Quibusdam occaecati est nisi esse. Saepe aut dignissimos distinctio id enim.
+                      Algoritma Naive Bayes bekerja dengan cara menghitung probabilitas terjadinya suatu kejadian (penyakit jantung) berdasarkan informasi yang tersedia (faktor risiko). Dalam hal ini, Naive Bayes dapat menghitung probabilitas seseorang terkena penyakit jantung dengan menggabungkan informasi dari semua faktor risiko yang ada.
+                    </p>
+                    <p>
+                      Tujuan dari menggunakan algoritma Naive Bayes dalam cek penyakit jantung adalah untuk membantu dalam mengidentifikasi risiko terkena penyakit jantung pada seseorang dan memberikan rekomendasi tindakan yang perlu diambil, seperti perubahan gaya hidup atau pengobatan lebih lanjut. Hal ini dapat membantu individu untuk mengambil tindakan preventif yang tepat dan memperbaiki kesehatan jantung mereka.
                     </p>
             </div>
         </div>
@@ -131,18 +129,10 @@
             <img src="assets/img/details-3.png" class="img-fluid" alt="">
         </div>
             <div class="col-md-8 pt-5" data-aos="fade-up">
-                    <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-                        <ul>
-                            <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                            <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-                        </ul>
+                    <h3>Solusi Umum</h3>
+                    <p>Setelah hasil yang didapat dari perhitungan algoritma K-Means dan Naive Bayes akan menghasilkan sebuah solusi umum yang nantinya tergantung output yang dihasilkan</p>
                     <p>
-                    Qui consequatur temporibus. Enim et corporis sit sunt harum praesentium suscipit ut voluptatem. Et nihil magni debitis consequatur est.
-                    </p>
-                    <p>
-                    Suscipit enim et. Ut optio esse quidem quam reiciendis esse odit excepturi. Vel dolores rerum soluta explicabo vel fugiat eum non.
+                    Solusi yang ditampilkan akan berdsarkan dari sumber-sumber terpercaya seperti jurnal, artikal,dan sebaginnya
                     </p>
             </div>
         </div>
@@ -152,15 +142,12 @@
             <img src="assets/img/details-4.png" class="img-fluid" alt="">
         </div>
         <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-                <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+            <h3>Rekomendasi Obat</h3>
+                <p class="">
+                  Setelah hasil yang didapat dari perhitungan algoritma K-Means dan Naive Bayes akan juga menghasilakn sebuah rekomendasi obat berdsarkan output yang tampil
                 </p>
                 <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
+                  Rekomendasi Obat akan berpedoman pada jurnal kesehatan khusus penyakit jantung, artikel, website kesehatan yang dibuat pemerintah, dan sebagainnya.
                 </p>
             <ul>
                 <li><i class="bi bi-check"></i> Et praesentium laboriosam architecto nam .</li>
