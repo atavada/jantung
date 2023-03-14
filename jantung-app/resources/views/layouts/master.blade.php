@@ -50,7 +50,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="@yield('menu')">Home</a></li>
           <li><a class="nav-link scrollto" href="#features">App Features</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>

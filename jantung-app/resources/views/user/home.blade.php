@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('menu', '#home')
 @section('content')
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
@@ -11,8 +11,8 @@
             <h1>Hearth Screening ADH</h1>
             <h5>Hearth Screening ADH adalah sebuah situs yang bertujuan untuk memberikan informasi dan layanan yang berkaitan dengan penyakit jantung. Website ini didesain dengan tampilan yang menarik dan mudah digunakan untuk memudahkan pengguna dalam mencari informasi mengenai penyakit jantung.</h5>
             <h5>Terdapat fitur untuk melakukan pengecekan risiko terkena penyakit jantung dengan menggunkan Algoritma K-Mean dan Naive Bayes.</h5>
-            <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> K-Mean</a>
-            <a href="#" class="download-btn"><i class="bx bxl-apple"></i> Naive Bayes</a>
+            <a href="/kmeans" class="download-btn"><i class="bx bxl-play-store"></i> K-Mean</a>
+            <a href="/bayes" class="download-btn"><i class="bx bxl-apple"></i> Naive Bayes</a>
         </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
