@@ -14,19 +14,28 @@ class KmeansController extends Controller
 
         // Melakukan pengulangan untuk setiap iterasi
         while ($iterasi < $maxIterasi) {
-            // Membandingkan jumlah anggota pada setiap cluster sebelumnya
+
             $temp1 = DB::table('cluster')->where('id', 1)->value('jumlahAnggota');
             $temp2 = DB::table('cluster')->where('id', 2)->value('jumlahAnggota');
 
-            // Menghitung rata-rata untuk setiap kolom pada setiap cluster
-            $mean1 = DB::table('data')->where('id', 1)->avg('kolom1');
-            $mean2 = DB::table('data')->where('id', 2)->avg('kolom2');
-            $mean3 = DB::table('data')->where('id', 3)->avg('kolom3');
+            // if ($iterasi != 1) {
+                
+            //     // Menghitung rata-rata untuk setiap kolom pada setiap cluster
+            //     $mean1 = DB::table('data')->avg('kolom1');
+            //     $mean2 = DB::table('data')->avg('kolom2');
+            //     $mean3 = DB::table('data')->avg('kolom3');
 
+<<<<<<< HEAD
+            //     // Mengupdate nilai tengah pada setiap cluster dengan rata-rata terbaru
+            //     DB::table('cluster')->where('id', 1)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
+            //     DB::table('cluster')->where('id', 2)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
+            // }   
+=======
             // Mengupdate nilai tengah pada setiap cluster dengan rata-rata terbaru
             // DB::table('cluster')->where('id', 1)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // DB::table('cluster')->where('id', 2)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // DB::table('cluster')->where('id', 3)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
+>>>>>>> d0651c8c3ee2a3b7e3e0ef622de841e23295ecb6
 
             // Mengambil data pada tabel data
             $data = DB::table('data')->get();
