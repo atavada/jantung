@@ -19,23 +19,21 @@ class KmeansController extends Controller
             $temp2 = DB::table('cluster')->where('id', 2)->value('jumlahAnggota');
 
             // if ($iterasi != 1) {
-                
+            
             //     // Menghitung rata-rata untuk setiap kolom pada setiap cluster
             //     $mean1 = DB::table('data')->avg('kolom1');
             //     $mean2 = DB::table('data')->avg('kolom2');
             //     $mean3 = DB::table('data')->avg('kolom3');
 
-<<<<<<< HEAD
             //     // Mengupdate nilai tengah pada setiap cluster dengan rata-rata terbaru
             //     DB::table('cluster')->where('id', 1)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             //     DB::table('cluster')->where('id', 2)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // }   
-=======
+
             // Mengupdate nilai tengah pada setiap cluster dengan rata-rata terbaru
             // DB::table('cluster')->where('id', 1)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // DB::table('cluster')->where('id', 2)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // DB::table('cluster')->where('id', 3)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
->>>>>>> d0651c8c3ee2a3b7e3e0ef622de841e23295ecb6
 
             // Mengambil data pada tabel data
             $data = DB::table('data')->get();
@@ -82,8 +80,16 @@ class KmeansController extends Controller
             $iterasi++;
         }
 
-
-
+        // print_r($center1id1);
+        // print_r($center2id1);
+        // print_r($center3id1);
+        // print_r($center1id2);
+        // print_r($center2id2);
+        // print_r($center3id2);
+        // print_r($jarak1);
+        // print_r($jarak2);
+        // print_r($temp1);
+        // print_r($temp2);
         $data = DB::table('data')->get();
         return view('user.kmeans')->with('data', $data);
     }
