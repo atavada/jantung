@@ -94,7 +94,7 @@
         <div class="col-md-8 pt-4" data-aos="fade-up">
             <h3>Algoritma K-Means</h3>
             <p>
-              K-Means dapat digunakan dalam cek penyakit jantung untuk melakukan pengelompokan atau clustering data berdasarkan karakteristik pasien yang memiliki risiko penyakit jantung yang sama. Dengan K-Means, data pasien dapat dikelompokkan ke dalam beberapa kelompok atau cluster berdasarkan kemiripan karakteristik tertentu.
+                K-Means dapat digunakan dalam cek penyakit jantung untuk melakukan pengelompokan atau clustering data berdasarkan karakteristik pasien yang memiliki risiko penyakit jantung yang sama. Dengan K-Means, data pasien dapat dikelompokkan ke dalam beberapa kelompok atau cluster berdasarkan kemiripan karakteristik tertentu.
             </p>
             <p>
                 Tujuan dari penggunaan K-Means dalam cek penyakit jantung adalah untuk membantu dalam mengidentifikasi kelompok pasien yang berisiko tinggi terkena penyakit jantung. Dalam website ini, K-Means dikelompokkan  berdasarkan faktor risiko tertentu, yaitu tekanan darah, kadar kolestrol, dan detak jantung maksimal.
