@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KmeansController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/kmeans', function () {
-    return view('user.kmeans');
-});
+
+Route::get('/kmeans', [KmeansController::class, 'kmeans']);
+
 Route::get('/bayes', function () {
     return view('user.bayes');
 });
