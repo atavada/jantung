@@ -16,7 +16,7 @@
         </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
-        <img src="/img/jantung.png" class="img-fluid" alt="">
+        <img src="/img/jantung.png" class="ms-auto" style="width:336px ; height:456px" alt="">
         </div>
     </div>
     </div>
@@ -148,7 +148,8 @@
         </div>
 
     </div>
-    </section><!-- End Details Section -->
+    </section>
+    <!-- End Details Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="contactme" class="contactme section-bg">

@@ -24,6 +24,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/kmeans', [KmeansController::class, 'kmeans']);
 
+// Route::get('/kmeans', [KmeansController::class, 'kmeans']);
+
+// Route::get('/kmeans', [KmeansController::class, 'kmeans']);
+
 Route::get('/bayes', function () {
     return view('user.bayes');
 });
