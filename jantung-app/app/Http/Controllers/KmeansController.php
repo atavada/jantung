@@ -9,9 +9,6 @@ class KmeansController extends Controller
 {
     public function kmeans()
     {
-        $data = DB::table('dataset')->select('trestbps', 'chol', 'fbs')->get()->toArray();
-        // Membuat cluster dengan inisial nilai tengah
-
         $maxIterasi = 10;
         $iterasi = 0;
 
@@ -20,7 +17,6 @@ class KmeansController extends Controller
             // Membandingkan jumlah anggota pada setiap cluster sebelumnya
             $temp1 = DB::table('cluster')->where('id', 1)->value('jumlahAnggota');
             $temp2 = DB::table('cluster')->where('id', 2)->value('jumlahAnggota');
-            $temp3 = DB::table('cluster')->where('id', 3)->value('jumlahAnggota');
 
             // Menghitung rata-rata untuk setiap kolom pada setiap cluster
             $mean1 = DB::table('data')->where('id', 1)->avg('kolom1');
@@ -54,37 +50,32 @@ class KmeansController extends Controller
     
                 $jarak2 = sqrt(pow(($kolom1 - $center1id2), 2) + pow(($kolom2 - $center2id2), 2) + pow(($kolom3 - $center3id2), 2));
     
-                $center1id3 = DB::table('cluster')->where('id', 3)->value('center1');
-                $center2id3 = DB::table('cluster')->where('id', 3)->value('center2');
-                $center3id3 = DB::table('cluster')->where('id', 3)->value('center3');
-    
-                $jarak3 = sqrt(pow(($kolom1 - $center1id3), 2) + pow(($kolom2 - $center2id3), 2) + pow(($kolom3 - $center3id3), 2));
-    
                 // Menentukan cluster yang terdekat dengan data
-                if ($jarak1 <= $jarak2 && $jarak1 <= $jarak3) {
+                if ($jarak1 <= $jarak2) {
                     $out = 1;
-                } elseif ($jarak2 <= $jarak1 && $jarak2 <= $jarak3) {
-                    $out = 2;
                 } else {
-                    $out = 3;
+                    $out = 2;
                 }
-    
+                
                 // Menyimpan hasil clustering pada tabel data
-                DB::table('data')->where('no', $d->no)->update(['C1' => $jarak1, 'C2' => $jarak2, 'C3' => $jarak3, 'id' => $out]);
+                DB::table('data')->where('id', $d->id)->update(['C1' => $jarak1, 'C2' => $jarak2]);
     
                 // Menambah jumlah anggota pada cluster yang terpilih
                 DB::table('cluster')->where('id', $out)->increment('jumlahAnggota');
             }
     
             // Memeriksa apakah jumlah anggota pada setiap cluster telah stabil
-            if ($temp1 == DB::table('cluster')->where('id', 1)->value('jumlahAnggota') && $temp2 == DB::table('cluster')->where('id', 2)->value('jumlahAnggota') && $temp3 == DB::table('cluster')->where('id', 3)->value('jumlahAnggota')) {
+            if ($temp1 == DB::table('cluster')->where('id', 1)->value('jumlahAnggota') && $temp2 == DB::table('cluster')->where('id', 2)->value('jumlahAnggota')) {
                 break;
             }
     
             // Menaikkan jumlah iterasi
             $iterasi++;
         }
+
+        
+
         $data = DB::table('data')->get();
-        return view('user.kmeans');
+        return view('user.kmeans')->with('data', $data);
     }
 }
