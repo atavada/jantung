@@ -25,15 +25,17 @@
 
 <main id="main">
 
-    <!-- ======= App Features Section ======= -->
-    <section id="features" class="features">
+    <!-- ======= App +--Features Section ======= -->
+    <section id="check" class="check">
     <div class="container">
 
         <div class="section-title">
-        <h2>Fitur</h2>
-        <p>Website ini memiliki fitur utama dalam cek penyakit jantung dengan berdasar pada Algoritma K-Means dan Naive Bayes. Tujuan dari 
-          algoritma K-Means adalah untuk meningkatkan efisiensi dalam pengolahan data dan memudahkan pengambilan keputusan. 
-          Naive Bayes menggunakan metode probabilistik untuk menghitung probabilitas terjadinya suatu kejadian berdasarkan informasi yang tersedia.</p>
+        <h2>Check</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>Fitur</h2>
+            <p>Website ini memiliki fitur utama dalam cek penyakit jantung dengan berdasar pada Algoritma K-Means dan Naive Bayes. Tujuan dari
+            algoritma K-Means adalah untuk meningkatkan efisiensi dalam pengolahan data dan memudahkan pengambilan keputusan.
+            Naive Bayes menggunakan metode probabilistik untuk menghitung probabilitas terjadinya suatu kejadian berdasarkan informasi yang tersedia.</p>
         </div>
 
         <div class="row no-gutters">
@@ -95,10 +97,10 @@
               K-Means dapat digunakan dalam cek penyakit jantung untuk melakukan pengelompokan atau clustering data berdasarkan karakteristik pasien yang memiliki risiko penyakit jantung yang sama. Dengan K-Means, data pasien dapat dikelompokkan ke dalam beberapa kelompok atau cluster berdasarkan kemiripan karakteristik tertentu.
             </p>
             <p>
-              Tujuan dari penggunaan K-Means dalam cek penyakit jantung adalah untuk membantu dalam mengidentifikasi kelompok pasien yang berisiko tinggi terkena penyakit jantung. Dalam website ini, K-Means dikelompokkan  berdasarkan faktor risiko tertentu, yaitu tekanan darah, kadar kolestrol, dan detak jantung maksimal.
+                Tujuan dari penggunaan K-Means dalam cek penyakit jantung adalah untuk membantu dalam mengidentifikasi kelompok pasien yang berisiko tinggi terkena penyakit jantung. Dalam website ini, K-Means dikelompokkan  berdasarkan faktor risiko tertentu, yaitu tekanan darah, kadar kolestrol, dan detak jantung maksimal.
             </p>
             <p>
-              Tujuan dari penggunaan K-Means dalam cek penyakit jantung adalah untuk membantu dokter atau tenaga medis dalam mengambil keputusan yang lebih baik dan lebih efektif dalam menangani pasien dengan risiko penyakit jantung. Selain itu, K-Means dapat membantu pasien untuk memperoleh pemahaman yang lebih baik mengenai risiko kesehatan mereka dan memperbaiki gaya hidup untuk mencegah terjadinya penyakit jantung.
+                Tujuan dari penggunaan K-Means dalam cek penyakit jantung adalah untuk membantu dokter atau tenaga medis dalam mengambil keputusan yang lebih baik dan lebih efektif dalam menangani pasien dengan risiko penyakit jantung. Selain itu, K-Means dapat membantu pasien untuk memperoleh pemahaman yang lebih baik mengenai risiko kesehatan mereka dan memperbaiki gaya hidup untuk mencegah terjadinya penyakit jantung.
             </p>
         </div>
         </div>
@@ -110,16 +112,16 @@
             <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                 <h3>Algoritma Naive Bayes</h3>
                     <p>
-                      Tujuan dari menggunakan algoritma Naive Bayes dalam cek penyakit jantung adalah untuk membantu dalam melakukan pengecekan risiko terkena penyakit jantung berdasarkan data riwayat kesehatan dan faktor risiko.
+                        Tujuan dari menggunakan algoritma Naive Bayes dalam cek penyakit jantung adalah untuk membantu dalam melakukan pengecekan risiko terkena penyakit jantung berdasarkan data riwayat kesehatan dan faktor risiko.
                     </p>
                     <p>
-                      Dalam hal ini, Naive Bayes digunakan untuk memprediksi kemungkinan seseorang terkena penyakit jantung berdasarkan faktor-faktor risiko yang telah diketahui sebelumnya, yaitu tekanan darah, kadar kolestrol, dan detak jantung maksimum.
+                        Dalam hal ini, Naive Bayes digunakan untuk memprediksi kemungkinan seseorang terkena penyakit jantung berdasarkan faktor-faktor risiko yang telah diketahui sebelumnya, yaitu tekanan darah, kadar kolestrol, dan detak jantung maksimum.
                     </p>
                     <p>
-                      Algoritma Naive Bayes bekerja dengan cara menghitung probabilitas terjadinya suatu kejadian (penyakit jantung) berdasarkan informasi yang tersedia (faktor risiko). Dalam hal ini, Naive Bayes dapat menghitung probabilitas seseorang terkena penyakit jantung dengan menggabungkan informasi dari semua faktor risiko yang ada.
+                        Algoritma Naive Bayes bekerja dengan cara menghitung probabilitas terjadinya suatu kejadian (penyakit jantung) berdasarkan informasi yang tersedia (faktor risiko). Dalam hal ini, Naive Bayes dapat menghitung probabilitas seseorang terkena penyakit jantung dengan menggabungkan informasi dari semua faktor risiko yang ada.
                     </p>
                     <p>
-                      Tujuan dari menggunakan algoritma Naive Bayes dalam cek penyakit jantung adalah untuk membantu dalam mengidentifikasi risiko terkena penyakit jantung pada seseorang dan memberikan rekomendasi tindakan yang perlu diambil, seperti perubahan gaya hidup atau pengobatan lebih lanjut. Hal ini dapat membantu individu untuk mengambil tindakan preventif yang tepat dan memperbaiki kesehatan jantung mereka.
+                        Tujuan dari menggunakan algoritma Naive Bayes dalam cek penyakit jantung adalah untuk membantu dalam mengidentifikasi risiko terkena penyakit jantung pada seseorang dan memberikan rekomendasi tindakan yang perlu diambil, seperti perubahan gaya hidup atau pengobatan lebih lanjut. Hal ini dapat membantu individu untuk mengambil tindakan preventif yang tepat dan memperbaiki kesehatan jantung mereka.
                     </p>
             </div>
         </div>
@@ -144,10 +146,10 @@
         <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
             <h3>Rekomendasi Obat</h3>
                 <p class="">
-                  Setelah hasil yang didapat dari perhitungan algoritma K-Means dan Naive Bayes akan juga menghasilakn sebuah rekomendasi obat berdsarkan output yang tampil
+                Setelah hasil yang didapat dari perhitungan algoritma K-Means dan Naive Bayes akan juga menghasilakn sebuah rekomendasi obat berdsarkan output yang tampil
                 </p>
                 <p>
-                  Rekomendasi Obat akan berpedoman pada jurnal kesehatan khusus penyakit jantung, artikel, website kesehatan yang dibuat pemerintah, dan sebagainnya.
+                Rekomendasi Obat akan berpedoman pada jurnal kesehatan khusus penyakit jantung, artikel, website kesehatan yang dibuat pemerintah, dan sebagainnya.
                 </p>
             <ul>
                 <li><i class="bi bi-check"></i> Et praesentium laboriosam architecto nam .</li>
@@ -161,11 +163,11 @@
     </section><!-- End Details Section -->
 
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
+    <section id="news" class="news">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Gallery</h2>
+            <h2>News</h2>
             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -194,11 +196,11 @@
     </section><!-- End Gallery Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <section id="contactme" class="contactme section-bg">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-        <h2>Testimonials</h2>
+        <h2>Contact Me</h2>
         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
