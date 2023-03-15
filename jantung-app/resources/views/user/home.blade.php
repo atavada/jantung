@@ -26,7 +26,7 @@
 <main id="main">
 
     <!-- ======= App +--Features Section ======= -->
-    <section id="check" class="check">
+    <section id="features" class="check">
     <div class="container">
 
         <div class="section-title">
@@ -139,11 +139,6 @@
                 <p>
                 Rekomendasi Obat akan berpedoman pada jurnal kesehatan khusus penyakit jantung, artikel, website kesehatan yang dibuat pemerintah, dan sebagainnya.
                 </p>
-            <ul>
-                <li><i class="bi bi-check"></i> Et praesentium laboriosam architecto nam .</li>
-                <li><i class="bi bi-check"></i> Eius et voluptate. Enim earum tempore aliquid. Nobis et sunt consequatur. Aut repellat in numquam velit quo dignissimos et.</li>
-                <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-            </ul>
         </div>
         </div>
 
@@ -152,7 +147,7 @@
     <!-- End Details Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="contactme" class="contactme section-bg">
+    <section id="profil" class="contactme section-bg">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -216,28 +211,30 @@
         <div class="section-title">
             <h2>Contact</h2>
         </div>
-
-        <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
-                <div class="form-group">
-                    <input placeholder="Your Name" type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group mt-3">
-                    <input placeholder="Your Email" type="email" class="form-control" name="email" id="email" required>
-                </div>
-                <div class="form-group mt-3">
-                    <input placeholder="Subject" type="text" class="form-control" name="subject" id="subject" required>
-                </div>
-                <div class="form-group mt-3">
-                    <textarea placeholder="Message" class="form-control" name="message" rows="5" required></textarea>
-                </div>
-                <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
+                    <div class="form-group">
+                        <input placeholder="Your Name" type="text" name="name" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input placeholder="Your Email" type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input placeholder="Subject" type="text" class="form-control" name="subject" id="subject" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea placeholder="Message" class="form-control" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+            </div>
+            
         </div>
 
     </div>
