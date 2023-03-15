@@ -17,7 +17,6 @@ class KmeansController extends Controller
             // Membandingkan jumlah anggota pada setiap cluster sebelumnya
             $temp1 = DB::table('cluster')->where('id', 1)->value('jumlahAnggota');
             $temp2 = DB::table('cluster')->where('id', 2)->value('jumlahAnggota');
-            $temp3 = DB::table('cluster')->where('id', 3)->value('jumlahAnggota');
 
             // Menghitung rata-rata untuk setiap kolom pada setiap cluster
             $mean1 = DB::table('data')->where('id', 1)->avg('kolom1');
@@ -27,7 +26,7 @@ class KmeansController extends Controller
             // Mengupdate nilai tengah pada setiap cluster dengan rata-rata terbaru
             // DB::table('cluster')->where('id', 1)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // DB::table('cluster')->where('id', 2)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
-            // DB::table('cluster')->where('id', 3)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);         
+            // DB::table('cluster')->where('id', 3)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
 
             // Mengambil data pada tabel data
             $data = DB::table('data')->get();
@@ -42,13 +41,13 @@ class KmeansController extends Controller
                 $center1id1 = DB::table('cluster')->where('id', 1)->value('center1');
                 $center2id1 = DB::table('cluster')->where('id', 1)->value('center2');
                 $center3id1 = DB::table('cluster')->where('id', 1)->value('center3');
-    
+
                 $jarak1 = sqrt(pow(($kolom1 - $center1id1), 2) + pow(($kolom2 - $center2id1), 2) + pow(($kolom3 - $center3id1), 2));
-    
+
                 $center1id2 = DB::table('cluster')->where('id', 2)->value('center1');
                 $center2id2 = DB::table('cluster')->where('id', 2)->value('center2');
                 $center3id2 = DB::table('cluster')->where('id', 2)->value('center3');
-    
+
                 $jarak2 = sqrt(pow(($kolom1 - $center1id2), 2) + pow(($kolom2 - $center2id2), 2) + pow(($kolom3 - $center3id2), 2));
 
                 // Menentukan cluster yang terdekat dengan data
@@ -57,22 +56,24 @@ class KmeansController extends Controller
                 } else {
                     $out = 2;
                 }
-                
+
                 // Menyimpan hasil clustering pada tabel data
-                DB::table('data')->where('id', $d->id)->update(['C1' => $jarak1, 'C2' => $jarak2, 'Class' => $out]);
-    
+                DB::table('data')->where('id', $d->id)->update(['C1' => $jarak1, 'C2' => $jarak2]);
+
                 // Menambah jumlah anggota pada cluster yang terpilih
                 DB::table('cluster')->where('id', $out)->increment('jumlahAnggota');
             }
-    
+
             // Memeriksa apakah jumlah anggota pada setiap cluster telah stabil
             if ($temp1 == DB::table('cluster')->where('id', 1)->value('jumlahAnggota') && $temp2 == DB::table('cluster')->where('id', 2)->value('jumlahAnggota')) {
                 break;
             }
-    
+
             // Menaikkan jumlah iterasi
             $iterasi++;
         }
+
+
 
         $data = DB::table('data')->get();
         return view('user.kmeans')->with('data', $data);
