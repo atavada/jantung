@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/kmeans', function () {
+    return view('user.kmeans');
+});
+Route::get('/bayes', function () {
+    return view('user.bayes');
+});
