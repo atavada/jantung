@@ -22,11 +22,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/kmeans', [KmeansController::class, 'kmeans']);
-
-// Route::get('/kmeans', [KmeansController::class, 'kmeans']);
-
-// Route::get('/kmeans', [KmeansController::class, 'kmeans']);
+Route::get('/kmeans', [KmeansController::class, 'kmeans'])->name('kmeans');
+Route::get('/cn', [KmeansController::class, 'cn']);
+Route::get('/km', [KmeansController::class, 'km']);
+Route::get('/cek', [KmeansController::class, 'cek']);
 
 Route::get('/bayes', function () {
     return view('user.bayes');

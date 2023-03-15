@@ -105,6 +105,7 @@
 				<th>Kolom 3</th>
 				<th>C1</th>
 				<th>C2</th>
+				<th>Class</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -116,6 +117,7 @@
 				<td>{{ $d->kolom3 }}</td>
 				<td>{{ $d->C1 }}</td>
 				<td>{{ $d->C2 }}</td>
+				<td>{{ $d->Class }}</td>
 			</tr>
 			@endforeach
 		</tbody>
