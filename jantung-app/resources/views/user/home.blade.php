@@ -24,12 +24,12 @@
 
 <main id="main">
 
-    <!-- ======= App Features Section ======= -->
-    <section id="features" class="features">
+    <!-- ======= App +--Features Section ======= -->
+    <section id="check" class="check">
     <div class="container">
 
         <div class="section-title">
-        <h2>App Features</h2>
+        <h2>Check</h2>
         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -173,11 +173,11 @@
     </section><!-- End Details Section -->
 
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
+    <section id="news" class="news">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Gallery</h2>
+            <h2>News</h2>
             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -206,11 +206,11 @@
     </section><!-- End Gallery Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <section id="contactme" class="contactme section-bg">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-        <h2>Testimonials</h2>
+        <h2>Contact Me</h2>
         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
