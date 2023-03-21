@@ -9,17 +9,15 @@ class KmeansController extends Controller
 {
     public function kmeans()
     {
-
-
         $maxIterasi = 10;
         $iterasi = 0;
-
         // Melakukan pengulangan untuk setiap iterasi
         while ($iterasi < $maxIterasi) {
-
+            // Membandingkan jumlah anggota pada setiap cluster sebelumnya
             $temp1 = DB::table('cluster')->where('id', 1)->value('jumlahAnggota');
             $temp2 = DB::table('cluster')->where('id', 2)->value('jumlahAnggota');
 
+<<<<<<< HEAD
             // if ($iterasi != 1) {
             //     // Menghitung rata-rata untuk setiap kolom pada setiap cluster
             //     $mean1 = DB::table('data')->avg('kolom1');
@@ -31,6 +29,8 @@ class KmeansController extends Controller
             // DB::table('cluster')->where('id', 2)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // DB::table('cluster')->where('id', 3)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
 
+=======
+>>>>>>> 61c8858a283f6b4a31d751e611f297cd742bd16e
             // Mengambil data pada tabel data
             $data = DB::table('data')->get();
 
@@ -45,23 +45,13 @@ class KmeansController extends Controller
                 $center2id1 = DB::table('cluster')->where('id', 1)->value('center2');
                 $center3id1 = DB::table('cluster')->where('id', 1)->value('center3');
 
-                $c1a = $d->C1;
                 $jarak1 = sqrt(pow(($kolom1 - $center1id1), 2) + pow(($kolom2 - $center2id1), 2) + pow(($kolom3 - $center3id1), 2));
 
                 $center1id2 = DB::table('cluster')->where('id', 2)->value('center1');
                 $center2id2 = DB::table('cluster')->where('id', 2)->value('center2');
                 $center3id2 = DB::table('cluster')->where('id', 2)->value('center3');
 
-                $c2a = $d->C2;
                 $jarak2 = sqrt(pow(($kolom1 - $center1id2), 2) + pow(($kolom2 - $center2id2), 2) + pow(($kolom3 - $center3id2), 2));
-
-                if($c1a == $jarak1 || $c2a == $jarak2){
-                    echo $c1a."<br>";
-                    echo $c2a."<br>";
-                    echo $jarak1."<br>";
-                    echo $jarak2."<br>";
-                    continue;
-                }
 
                 // Menentukan cluster yang terdekat dengan data
                 if ($jarak1 <= $jarak2) {
@@ -74,6 +64,7 @@ class KmeansController extends Controller
                 DB::table('data')->where('id', $d->id)->update(['C1' => $jarak1, 'C2' => $jarak2, 'Class' => $out]);
 
                 // Menambah jumlah anggota pada cluster yang terpilih
+<<<<<<< HEAD
                 // DB::table('cluster')->where('id', $out)->increment('jumlahAnggota');
 
             }
@@ -144,11 +135,32 @@ class KmeansController extends Controller
             //     } else {
             //         continue;
             // }
+=======
+                DB::table('cluster')->where('id', $out)->increment('jumlahAnggota');
+            }
+            // Menghitung rata-rata untuk setiap kolom pada setiap cluster
+            $mean1 = DB::table('data')->where('Class', 1)->avg('kolom1');
+            $mean2 = DB::table('data')->where('Class', 1)->avg('kolom2');
+            $mean3 = DB::table('data')->where('Class', 1)->avg('kolom3');
+            DB::table('cluster')->where('id', 1)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
+            // Menghitung rata-rata untuk setiap kolom pada setiap cluster
+            $mean4 = DB::table('data')->where('Class', 2)->avg('kolom1');
+            $mean5 = DB::table('data')->where('Class', 2)->avg('kolom2');
+            $mean6 = DB::table('data')->where('Class', 2)->avg('kolom3');
+            // Mengupdate nilai tengah pada setiap cluster dengan rata-rata terbaru
+            DB::table('cluster')->where('id', 2)->update(['center1' => $mean4, 'center2' => $mean5, 'center3' => $mean6]);
+
+            // Memeriksa apakah jumlah anggota pada setiap cluster telah stabil
+            if ($temp1 == DB::table('cluster')->where('id', 1)->value('jumlahAnggota') && $temp2 == DB::table('cluster')->where('id', 2)->value('jumlahAnggota')) {
+                break;
+            }
+>>>>>>> 61c8858a283f6b4a31d751e611f297cd742bd16e
 
             // Menaikkan jumlah iterasi
             $iterasi++;
         }
 
+<<<<<<< HEAD
         //Buat centroid baru
         $data = DB::table('data')->get();
 
@@ -212,13 +224,9 @@ class KmeansController extends Controller
             $i++;
         }
 
+=======
+>>>>>>> 61c8858a283f6b4a31d751e611f297cd742bd16e
         $data = DB::table('data')->get();
         return view('user.kmeans')->with('data', $data);
-    }
-    public function cek(){
-        $jc1 = DB::table('data')->where('Class', 1)->count();
-        $jc2 = DB::table('data')->where('Class', 2)->count();
-        echo $jc1;
-        echo $jc2;
     }
 }
