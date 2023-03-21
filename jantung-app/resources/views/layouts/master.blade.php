@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="{{ asset('assets/img/adh_logo.png') }}" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -23,6 +23,7 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -39,7 +40,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top  header-transparent ">
+  <header id="header" class="fixed-top header-transparent ">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
@@ -67,6 +68,13 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
+
+     {{-- Style --}}
+     <style>
+        body {
+            background-color: #303641;
+        }
+    </style>
 
     </div>
   </header>
