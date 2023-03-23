@@ -6,22 +6,24 @@
       <div class="card-body p-5">
         <h5 class="card-title text-center">Heart Screening ADH</h5>
         <hr />
-        <div class="row mt-5">
-          <div class="col-4 mb-3">
-            <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
-            <input type="text" class="form-control" id="" />
-          </div>
-          <div class="col-4 mb-3">
-            <label class="form-label">Kadar Kolesterol (mg/dl)</label>
-            <input type="text" class="form-control" id="" />
-          </div>
-          <div class="col-4 mb-3">
-            <label class="form-label">Detak Jantung Maksimum (mm/hg)</label>
-            <input type="text" class="form-control" id="" />
-          </div>
-          <div class="col-12">
-            <input type="button" class="btn btn-primary float-end" id="tekan" value="Submit" />
-          </div>
+        <form action="" method="POST">
+          <div class="row mt-5">
+            <div class="col-4 mb-3">
+              <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
+              <input type="text" class="form-control" id="" />
+            </div>
+            <div class="col-4 mb-3">
+              <label class="form-label">Kadar Kolesterol (mg/dl)</label>
+              <input type="text" class="form-control" id="" />
+            </div>
+            <div class="col-4 mb-3">
+              <label class="form-label">Detak Jantung Maksimum (mm/hg)</label>
+              <input type="text" class="form-control" id="" />
+            </div>
+            <div class="col-12">
+              <input type="button" class="btn btn-primary float-end" id="tekan" value="Submit" />
+            </div>
+        </form>
         </div>
       </div>
     </div>
@@ -96,30 +98,4 @@
     </div>
   </div>
 
-  <table border="1">
-		<thead>
-			<tr>
-				<th>No</th>
-				<th>Kolom 1</th>
-				<th>Kolom 2</th>
-				<th>Kolom 3</th>
-				<th>C1</th>
-				<th>C2</th>
-				<th>Class</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach($data as $d)
-			<tr>
-				<td>{{ $d->id }}</td>
-				<td>{{ $d->kolom1 }}</td>
-				<td>{{ $d->kolom2 }}</td>
-				<td>{{ $d->kolom3 }}</td>
-				<td>{{ $d->C1 }}</td>
-				<td>{{ $d->C2 }}</td>
-				<td>{{ $d->Class }}</td>
-			</tr>
-			@endforeach
-		</tbody>
-	</table>
 @endsection
