@@ -11,6 +11,7 @@ class KmeansController extends Controller
     {
         $maxIterasi = 10;
         $iterasi = 0;
+
         // Melakukan pengulangan untuk setiap iterasi
         while ($iterasi < $maxIterasi) {
             // Membandingkan jumlah anggota pada setiap cluster sebelumnya
@@ -72,8 +73,36 @@ class KmeansController extends Controller
             // Menaikkan jumlah iterasi
             $iterasi++;
         }
+    }
 
-        $data = DB::table('data')->get();
-        return view('user.kmeans')->with('data', $data);
+    public function output(Request $request)
+    {
+        $tekananDarah = intval($request->input('tekdar'));
+        $kolestrol = intval($request->input('kol'));
+        $detakjantung = intval($request->input('demax'));
+
+        $getTekananDarah1 = DB::table('cluster')->where('id', 1)->value('center1');
+        $getTekananDarah2 = DB::table('cluster')->where('id', 2)->value('center1');
+        $getKolestrol1 = DB::table('cluster')->where('id', 1)->value('center2');
+        $getKolestrol2 = DB::table('cluster')->where('id', 2)->value('center2');
+        $getDetakJantung1 = DB::table('cluster')->where('id', 1)->value('center3');
+        $getDetakJantung2 = DB::table('cluster')->where('id', 2)->value('center3');
+
+        if (($tekananDarah <= $getTekananDarah1) && ($kolestrol <= $getKolestrol1) && ($detakjantung <= $getDetakJantung1)) {
+            $resiko = "tidak beresiko";
+        } else if (($tekananDarah >= $getTekananDarah2) && ($kolestrol >= $getKolestrol2) && ($detakjantung >= $getDetakJantung2)) {
+            $resiko = "Resiko Tinggi";
+        } else {
+            $jarak1 = sqrt(pow(($tekananDarah - $getTekananDarah1), 2) + pow(($kolestrol - $getKolestrol1), 2) + pow(($detakjantung - $getDetakJantung1), 2));
+            $jarak2 = sqrt(pow(($tekananDarah - $getTekananDarah2), 2) + pow(($kolestrol - $getKolestrol2), 2) + pow(($detakjantung - $getDetakJantung2), 2));
+            if ($jarak1 < $jarak2) {
+                $resiko = "Tidak Beresiko";
+            } else if ($jarak1 == $jarak2) {
+                $resiko = "Resiko rendah";
+            } else {
+                $resiko = "Resiko rendah";
+            }
+        }
+        return view('user.kmeans', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung'));
     }
 }

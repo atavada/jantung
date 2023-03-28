@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KmeansController;
+use App\Http\Controllers\KmeanskeduaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/kmeans', [KmeansController::class, 'kmeans'])->name('kmeans');
+// Route::get('/kmeans', [KmeansController::class, 'kmeans'])->name('kmeans');
 
-Route::get('/compare/{a}/{b}/{x}', [KmeansController::class, 'compare']);
+Route::get('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
+Route::post('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
 
 Route::get('/bayes', function () {
     return view('user.bayes');
