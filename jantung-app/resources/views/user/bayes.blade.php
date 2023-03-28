@@ -6,27 +6,32 @@
     <div class="card-body p-5">
       <h5 class="card-title text-center">Naive Bayes</h5>
       <hr />
-      <div class="row mt-5">
-        <div class="col-3 mb-3">
-          <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
-          <input type="text" class="form-control" id="" />
+      
+        <form action="{{  route('bayes') }}" method="GET">
+          <div class="row mt-5">
+          @csrf
+          <div class="col-3 mb-3">
+            <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
+            <input type="text" class="form-control"  id="" name="tekdar" />
+          </div>
+          <div class="col-3 mb-3">
+            <label class="form-label">Kolesterol (mg/dl)</label>
+            <input type="text" class="form-control"  id="" name="kol"/>
+          </div>
+          <div class="col-3 mb-3">
+            <label class="form-label">Detak Jantung Maksimum</label>
+            <input type="text" class="form-control"  id="" name="demak"/>
+          </div>
+          <div class="col-3 mb-3">
+            <label class="form-label">Output yang Diprediksi (ya/tidak)</label>
+            <input type="text" class="form-control"  id="" name="output"/>
+          </div>
+          <div class="col-12">
+            <input type="submit" class="btn btn-primary float-end" id="tekan" value="Submit" />
+          </div>
         </div>
-        <div class="col-3 mb-3">
-          <label class="form-label">Kolesterol (mg/dl)</label>
-          <input type="text" class="form-control" id="" />
-        </div>
-        <div class="col-3 mb-3">
-          <label class="form-label">Gula Darah Puasa (mg/dl)</label>
-          <input type="text" class="form-control" id="" />
-        </div>
-        <div class="col-3 mb-3">
-          <label class="form-label">Output yang Diprediksi (ya/tidak)</label>
-          <input type="text" class="form-control" id="" />
-        </div>
-        <div class="col-12">
-          <input type="button" class="btn btn-primary float-end" id="tekan" value="Submit" />
-        </div>
-      </div>
+        </form>
+      
     </div>
   </div>
 </div>
@@ -41,16 +46,16 @@
             <tr>
               <th scope="col">Tekanan Darah Sistolik</th>
               <th scope="col">Kolesterol</th>
-              <th scope="col">Gula Darah Puasa</th>
+              <th scope="col">Detak jantung maksimum</th>
               <th scope="col">Output yang diinginkan</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>130</td>
-              <td>603</td>
-              <td>120</td>
-              <td>iya</td>
+              <td>{{ $tekananDarah }}</td>
+              <td>{{ $kolestrol }}</td>
+              <td>{{ $detakjantung }}</td>
+              <td>{{ $output }}</td>
             </tr>
           </tbody>
         </table>
@@ -64,7 +69,7 @@
           </thead>
           <tbody>
             <tr>
-              <td scope="row">47%</td>
+              <td scope="row">{{ $outputAsli }}</td>
             </tr>
           </tbody>
         </table>
