@@ -18,8 +18,6 @@ return new class extends Migration
             $table->float('kolom3');
             $table->float('C1');
             $table->float('C2');
-            $table->float('C3');
-            $table->float('C4');
             $table->integer('Class');
             $table->timestamps();
         });

@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('cluster', function (Blueprint $table) {
             $table->id();
             $table->float('center1');
-            $table->float('center1');
-            $table->float('center1');
-            $table->float('center1');
+            $table->float('center2');
+            $table->float('center3');
             $table->integer('jumlahAnggota')->default(0);
             $table->timestamps();
         });

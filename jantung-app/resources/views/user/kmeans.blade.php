@@ -6,8 +6,8 @@
       <div class="card-body p-5">
         <h5 class="card-title text-center">Heart Screening ADH</h5>
         <hr />
-        <div class="row mt-5">
           <form action="{{ route('kmeans') }}" method="POST">
+            <div class="row mt-5">
             @csrf
             <div class="col-4 mb-3">
               <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
@@ -24,8 +24,8 @@
             <div class="col-12">
               <button type="submit" name="submit" id="tombol">SUBMIT</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
