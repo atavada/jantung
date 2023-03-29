@@ -6,9 +6,9 @@
       <div class="card-body p-5">
         <h5 class="card-title text-center">Heart Screening ADH</h5>
         <hr />
-          <form action="{{ route('kmeans') }}" method="POST">
-            <div class="row mt-5">
+          <form action="{{ route('kmeans') }}" method="GET">
             @csrf
+            <div class="row mt-5">
             <div class="col-4 mb-3">
               <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
               <input type="number" class="form-control" id="" name="tekdar"/>
@@ -57,14 +57,12 @@
           <table class="table table-striped-columns">
             <thead>
               <tr>
-                <th scope="col">Resiko</th>
-                <th scope="col">Nilai kepastian </th>
+                <th class="text-center"scope="col">Nilai kepastian </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td scope="row">Beresiko</td>
-                <td>{{ $resiko }}</td>
+                <td class="text-center">{{ $resiko }}</td>
               </tr>
             </tbody>
           </table>

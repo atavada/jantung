@@ -19,7 +19,7 @@
             <input type="text" class="form-control"  id="" name="kol"/>
           </div>
           <div class="col-3 mb-3">
-            <label class="form-label">Detak Jantung Maksimum</label>
+            <label class="form-label">Detak Jantung Maksimum (mm/hg)</label>
             <input type="text" class="form-control"  id="" name="demak"/>
           </div>
           <div class="col-3 mb-3">

@@ -1,103 +1,113 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BayesController extends Controller
 {
-    public function bayes(){
+    public function bayes()
+    {
         $data = DB::table('dataset')->get();
 
-            // Melakukan perulangan untuk setiap data
-            foreach ($data as $d) {
-                $trestbps = $d->trestbps;
-                $chol = $d->chol;
-                $thalch = $d->thalch;
-                $num = $d->num;
+        // Melakukan perulangan untuk setiap data dalam tabel dataset
+        foreach ($data as $d) {
+            $trestbps = $d->trestbps;
+            $chol = $d->chol;
+            $thalch = $d->thalch;
+            $num = $d->num;
 
-                if($trestbps >= 140 ){
-                    $new1 = 1;
-                }else{
-                    $new1 = 0;
-                }
-
-                if($chol >= 134 ){
-                    $new2 = 1;
-                }else{
-                    $new2 = 0;
-                }
-
-                if($thalch >= 119 ){
-                    $new3 = 1;
-                }else{
-                    $new3 = 0;
-                }
-
-                if($num >= 1 ){
-                    $new4 = 1;
-                }else{
-                    $new4 = 0;
-                }
-                
-                
-                // Menyimpan hasil perubahan pada tabel naivebayes
-                DB::table('naive_bayes')->where('id', $d->id)->update(['trestbps' => $new1, 'chol' => $new2, 'thalch' => $new3, 'num'=> $new4]);
+            // melakukan perkondisian
+            if ($trestbps >= 140) {
+                $new1 = 1;
+            } else {
+                $new1 = 0;
             }
 
-        $countOutput1 = DB::table('naive_bayes')->where('num', 1)->count('num')/DB::table('naive_bayes')->count('num');
-        $countOutput0 = DB::table('naive_bayes')->where('num', 0)->count('num')/DB::table('naive_bayes')->count('num');
-            
-        DB::table('naives')->where('id', 1 )->update(['output_1' => $countOutput1, 'output_0' => $countOutput0]);
+            if ($chol >= 134) {
+                $new2 = 1;
+            } else {
+                $new2 = 0;
+            }
 
-        $countTekdar1 = DB::table('naive_bayes')->where('trestbps', 1)->where('num',1)->count('num')/DB::table('naive_bayes')->where('num', 1)->count('num');
-        $countTekdar0 = DB::table('naive_bayes')->where('trestbps', 1)->where('num',0)->count('num')/DB::table('naive_bayes')->where('num', 0)->count('num');
-        $countTekdar1_ = DB::table('naive_bayes')->where('trestbps', 0)->where('num',1)->count('num')/DB::table('naive_bayes')->where('num', 1)->count('num');
-        $countTekdar0_ = DB::table('naive_bayes')->where('trestbps', 0)->where('num',0)->count('num')/DB::table('naive_bayes')->where('num', 0)->count('num');
-        $countKol1 = DB::table('naive_bayes')->where('chol', 1)->where('num',1)->count('num')/DB::table('naive_bayes')->where('num', 1)->count('num');
-        $countKol0 = DB::table('naive_bayes')->where('chol', 1)->where('num',0)->count('num')/DB::table('naive_bayes')->where('num', 0)->count('num');
-        $countKol1_ = DB::table('naive_bayes')->where('chol', 0)->where('num',1)->count('num')/DB::table('naive_bayes')->where('num', 1)->count('num');
-        $countKol0_ = DB::table('naive_bayes')->where('chol', 0)->where('num',0)->count('num')/DB::table('naive_bayes')->where('num', 0)->count('num');
-        $countDemax1 = DB::table('naive_bayes')->where('thalch', 1)->where('num',1)->count('num')/DB::table('naive_bayes')->where('num', 1)->count('num');
-        $countDemax0 = DB::table('naive_bayes')->where('thalch', 1)->where('num',0)->count('num')/DB::table('naive_bayes')->where('num', 0)->count('num');
-        $countDemax1_= DB::table('naive_bayes')->where('thalch', 0)->where('num',1)->count('num')/DB::table('naive_bayes')->where('num', 1)->count('num');
-        $countDemax0_ = DB::table('naive_bayes')->where('thalch', 0)->where('num',0)->count('num')/DB::table('naive_bayes')->where('num', 0)->count('num');
+            if ($thalch >= 119) {
+                $new3 = 1;
+            } else {
+                $new3 = 0;
+            }
 
-        DB::table('naives')->where('id', 2 )->update(['output_1' => $countTekdar1, 'output_0' => $countTekdar0]);
-        DB::table('naives')->where('id', 3 )->update(['output_1' => $countTekdar1_, 'output_0' => $countTekdar0_]);
-        DB::table('naives')->where('id', 4 )->update(['output_1' => $countKol1, 'output_0' => $countKol0]);
-        DB::table('naives')->where('id', 5 )->update(['output_1' => $countKol1_, 'output_0' => $countKol0_]);
-        DB::table('naives')->where('id', 6 )->update(['output_1' => $countDemax1, 'output_0' => $countDemax0]);
-        DB::table('naives')->where('id', 7 )->update(['output_1' => $countDemax1_, 'output_0' => $countDemax0_]);
+            if ($num >= 1) {
+                $new4 = 1;
+            } else {
+                $new4 = 0;
+            }
+
+
+            // Menyimpan hasil perubahan pada tabel naivebayes
+            DB::table('naive_bayes')->where('id', $d->id)->update(['trestbps' => $new1, 'chol' => $new2, 'thalch' => $new3, 'num' => $new4]);
+        }
+
+        //menghitung count dari output
+        $countOutput1 = DB::table('naive_bayes')->where('num', 1)->count('num') / DB::table('naive_bayes')->count('num');
+        $countOutput0 = DB::table('naive_bayes')->where('num', 0)->count('num') / DB::table('naive_bayes')->count('num');
+
+        // menyimpan count output dalam tabel naives
+        DB::table('naives')->where('id', 1)->update(['output_1' => $countOutput1, 'output_0' => $countOutput0]);
+
+        //menghitung count setiap tekanan daah, kolestrol, dan detak jantung terhadap output yang sesuai
+        $countTekdar1 = DB::table('naive_bayes')->where('trestbps', 1)->where('num', 1)->count('num') / DB::table('naive_bayes')->where('num', 1)->count('num');
+        $countTekdar0 = DB::table('naive_bayes')->where('trestbps', 1)->where('num', 0)->count('num') / DB::table('naive_bayes')->where('num', 0)->count('num');
+        $countTekdar1_ = DB::table('naive_bayes')->where('trestbps', 0)->where('num', 1)->count('num') / DB::table('naive_bayes')->where('num', 1)->count('num');
+        $countTekdar0_ = DB::table('naive_bayes')->where('trestbps', 0)->where('num', 0)->count('num') / DB::table('naive_bayes')->where('num', 0)->count('num');
+        $countKol1 = DB::table('naive_bayes')->where('chol', 1)->where('num', 1)->count('num') / DB::table('naive_bayes')->where('num', 1)->count('num');
+        $countKol0 = DB::table('naive_bayes')->where('chol', 1)->where('num', 0)->count('num') / DB::table('naive_bayes')->where('num', 0)->count('num');
+        $countKol1_ = DB::table('naive_bayes')->where('chol', 0)->where('num', 1)->count('num') / DB::table('naive_bayes')->where('num', 1)->count('num');
+        $countKol0_ = DB::table('naive_bayes')->where('chol', 0)->where('num', 0)->count('num') / DB::table('naive_bayes')->where('num', 0)->count('num');
+        $countDemax1 = DB::table('naive_bayes')->where('thalch', 1)->where('num', 1)->count('num') / DB::table('naive_bayes')->where('num', 1)->count('num');
+        $countDemax0 = DB::table('naive_bayes')->where('thalch', 1)->where('num', 0)->count('num') / DB::table('naive_bayes')->where('num', 0)->count('num');
+        $countDemax1_ = DB::table('naive_bayes')->where('thalch', 0)->where('num', 1)->count('num') / DB::table('naive_bayes')->where('num', 1)->count('num');
+        $countDemax0_ = DB::table('naive_bayes')->where('thalch', 0)->where('num', 0)->count('num') / DB::table('naive_bayes')->where('num', 0)->count('num');
+
+        //menyimpan hasil tadi dalam tabel naives
+        DB::table('naives')->where('id', 2)->update(['output_1' => $countTekdar1, 'output_0' => $countTekdar0]);
+        DB::table('naives')->where('id', 3)->update(['output_1' => $countTekdar1_, 'output_0' => $countTekdar0_]);
+        DB::table('naives')->where('id', 4)->update(['output_1' => $countKol1, 'output_0' => $countKol0]);
+        DB::table('naives')->where('id', 5)->update(['output_1' => $countKol1_, 'output_0' => $countKol0_]);
+        DB::table('naives')->where('id', 6)->update(['output_1' => $countDemax1, 'output_0' => $countDemax0]);
+        DB::table('naives')->where('id', 7)->update(['output_1' => $countDemax1_, 'output_0' => $countDemax0_]);
     }
 
-    public function output(Request $request){
+    public function output(Request $request)
+    {
+        //menerima request user
         $tekananDarah = intval($request->input('tekdar'));
         $kolestrol = intval($request->input('kol'));
         $detakjantung = intval($request->input('demak'));
-        $output = intval($request->input('output'));
+        $output = $request->input('output');
 
-        if($tekananDarah >= 140 ){
+        // memberikan kondisi requaest user sesuai kondisi
+        if ($tekananDarah >= 140) {
             $new1 = 1;
-        }else{
+        } else {
             $new1 = 0;
         }
 
-        if($kolestrol >= 134 ){
+        if ($kolestrol >= 134) {
             $new2 = 1;
-        }else{
+        } else {
             $new2 = 0;
         }
 
-        if($detakjantung >= 119 ){
+        if ($detakjantung >= 119) {
             $new3 = 1;
-        }else{
+        } else {
             $new3 = 0;
         }
 
-        if($output == 1 ){
+        if ($output === "ya") {
             $new4 = 1;
-        }else{
+        } else if ("tidak") {
             $new4 = 0;
         }
         // output
@@ -119,41 +129,41 @@ class BayesController extends Controller
         $p13 = DB::table('naives')->where('id', 7)->value('output_1');
         $p14 = DB::table('naives')->where('id', 7)->value('output_0');
 
-        $hasil =  $p1 * $p3 * $p9 * $p13 * 100;
-        if($new1 && $new2 && $new3 && $new4 == 1){
+        //menghitung hasil akhir dengan 16 kemungkinan request user
+        $hasil = 0;
+        if ($new1 && $new2 && $new3 && $new4 == 1) {
             $hasil = $p1 * $p3 * $p7 * $p11 * 100;
-        } else if(($new1 && $new4 == 1) && ($new2 && $new3 == 0)){
+        } else if (($new1 && $new4 == 1) && ($new2 && $new3 == 0)) {
             $hasil = $p1 * $p3 * $p9 * $p13 * 100;
-        } else if(($new1 && $new3 && $new4 == 1) && ($new2 == 0)){
+        } else if (($new1 && $new3 && $new4 == 1) && ($new2 == 0)) {
             $hasil = $p1 * $p3 * $p9 * $p11 * 100;
-        } else if(($new1 && $new2 && $new4 == 1) && ($new3 == 0)){
+        } else if (($new1 && $new2 && $new4 == 1) && ($new3 == 0)) {
             $hasil = $p1 * $p3 * $p7 * $p13 * 100;
-        } else if(($new1 && $new2 == 0) && ($new3 && $new4 == 1)){
+        } else if (($new1 && $new2 == 0) && ($new3 && $new4 == 1)) {
             $hasil = $p1 * $p5 * $p9 * $p11 * 100;
-        } else if(($new1 && $new3 == 0) && ($new2 && $new4 == 1)){
+        } else if (($new1 && $new3 == 0) && ($new2 && $new4 == 1)) {
             $hasil = $p1 * $p5 * $p7 * $p13 * 100;
-        } else if(($new1 == 0) && ($new2 && $new3 && $new4 == 1)){
+        } else if (($new1 == 0) && ($new2 && $new3 && $new4 == 1)) {
             $hasil = $p1 * $p5 * $p7 * $p11 * 100;
-        } else if(($new1 && $new2 && $new3 == 0) && ($new4 == 1)){
+        } else if (($new1 && $new2 && $new3 == 0) && ($new4 == 1)) {
             $hasil = $p1 * $p5 * $p9 * $p13 * 100;
-        } 
-        else if($new1 && $new2 && $new3 && $new4 == 0){
+        } else if ($new1 && $new2 && $new3 && $new4 == 0) {
             $hasil = $p2 * $p6 * $p10 * $p14 * 100;
-        } else if(($new1 == 1) && ($new2 && $new3  && $new4 == 0)){
+        } else if (($new1 == 1) && ($new2 && $new3  && $new4 == 0)) {
             $hasil = $p2 * $p4 * $p10 * $p14 * 100;
-        } else if(($new1 && $new3 == 1) && ($new2 && $new4  == 0)){
+        } else if (($new1 && $new3 == 1) && ($new2 && $new4  == 0)) {
             $hasil = $p2 * $p4 * $p10 * $p12 * 100;
-        } else if(($new1 && $new2  == 1) && ($new3 && $new4== 0)){
+        } else if (($new1 && $new2  == 1) && ($new3 && $new4 == 0)) {
             $hasil = $p2 * $p4 * $p8 * $p14 * 100;
-        } else if(($new1 && $new2 && $new4 == 0) && ($new3  == 1)){
+        } else if (($new1 && $new2 && $new4 == 0) && ($new3  == 1)) {
             $hasil = $p2 * $p6 * $p10 * $p12 * 100;
-        } else if(($new1 && $new3 && $new4 == 0) && ($new2 == 1)){
+        } else if (($new1 && $new3 && $new4 == 0) && ($new2 == 1)) {
             $hasil = $p2 * $p6 * $p8 * $p14 * 100;
-        } else if(($new1 && $new4 == 0) && ($new2 && $new3  == 1)){
+        } else if (($new1 && $new4 == 0) && ($new2 && $new3  == 1)) {
             $hasil = $p2 * $p6 * $p8 * $p12 * 100;
-        } else if(($new1 && $new2 && $new3 == 1 )&&($new4=0)){
+        } else if (($new1 && $new2 && $new3 == 1) && ($new4 = 0)) {
             $hasil = $p2 * $p4 * $p8 * $p12 * 100;
-        } 
+        }
 
         $outputAsli = $hasil . '%';
         return view('user.bayes', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
