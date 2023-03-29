@@ -22,7 +22,7 @@
               <input type="number" class="form-control" id="" name="demax"/>
             </div>
             <div class="col-12">
-              <button type="submit" name="submit" id="tombol">SUBMIT</button>
+              <button class="btn btn-primary" type="submit" name="submit" id="tombol">SUBMIT</button>
             </div>
           </div>
         </form>

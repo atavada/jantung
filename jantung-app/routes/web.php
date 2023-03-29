@@ -25,8 +25,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::get('/kmeans', [KmeansController::class, 'kmeans'])->name('kmeans');
-
+Route::post('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
 Route::get('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
 
 
