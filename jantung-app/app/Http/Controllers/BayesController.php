@@ -105,10 +105,10 @@ class BayesController extends Controller
             $new3 = 0;
         }
 
-        if ($output === "ya") {
-            $new4 = 1;
-        } else if ("tidak") {
-            $new4 = 0;
+        if ($output == "ya") {
+            $new4 = "output_1";
+        } else if ($output == "tidak") {
+            $new4 = "output_0";
         }
         // output
         $p1 = DB::table('naives')->where('id', 1)->value('output_1');
@@ -129,42 +129,47 @@ class BayesController extends Controller
         $p13 = DB::table('naives')->where('id', 7)->value('output_1');
         $p14 = DB::table('naives')->where('id', 7)->value('output_0');
 
-        //menghitung hasil akhir dengan 16 kemungkinan request user
-        $hasil = 0;
-        if ($new1 && $new2 && $new3 && $new4 == 1) {
-            $hasil = $p1 * $p3 * $p7 * $p11 * 100;
-        } else if (($new1 && $new4 == 1) && ($new2 && $new3 == 0)) {
-            $hasil = $p1 * $p3 * $p9 * $p13 * 100;
-        } else if (($new1 && $new3 && $new4 == 1) && ($new2 == 0)) {
-            $hasil = $p1 * $p3 * $p9 * $p11 * 100;
-        } else if (($new1 && $new2 && $new4 == 1) && ($new3 == 0)) {
-            $hasil = $p1 * $p3 * $p7 * $p13 * 100;
-        } else if (($new1 && $new2 == 0) && ($new3 && $new4 == 1)) {
-            $hasil = $p1 * $p5 * $p9 * $p11 * 100;
-        } else if (($new1 && $new3 == 0) && ($new2 && $new4 == 1)) {
-            $hasil = $p1 * $p5 * $p7 * $p13 * 100;
-        } else if (($new1 == 0) && ($new2 && $new3 && $new4 == 1)) {
-            $hasil = $p1 * $p5 * $p7 * $p11 * 100;
-        } else if (($new1 && $new2 && $new3 == 0) && ($new4 == 1)) {
-            $hasil = $p1 * $p5 * $p9 * $p13 * 100;
-        } else if ($new1 && $new2 && $new3 && $new4 == 0) {
-            $hasil = $p2 * $p6 * $p10 * $p14 * 100;
-        } else if (($new1 == 1) && ($new2 && $new3  && $new4 == 0)) {
-            $hasil = $p2 * $p4 * $p10 * $p14 * 100;
-        } else if (($new1 && $new3 == 1) && ($new2 && $new4  == 0)) {
-            $hasil = $p2 * $p4 * $p10 * $p12 * 100;
-        } else if (($new1 && $new2  == 1) && ($new3 && $new4 == 0)) {
-            $hasil = $p2 * $p4 * $p8 * $p14 * 100;
-        } else if (($new1 && $new2 && $new4 == 0) && ($new3  == 1)) {
-            $hasil = $p2 * $p6 * $p10 * $p12 * 100;
-        } else if (($new1 && $new3 && $new4 == 0) && ($new2 == 1)) {
-            $hasil = $p2 * $p6 * $p8 * $p14 * 100;
-        } else if (($new1 && $new4 == 0) && ($new2 && $new3  == 1)) {
-            $hasil = $p2 * $p6 * $p8 * $p12 * 100;
-        } else if (($new1 && $new2 && $new3 == 1) && ($new4 = 0)) {
-            $hasil = $p2 * $p4 * $p8 * $p12 * 100;
-        }
 
+        //menghitung hasil akhir dengan 16 kemungkinan dan disimpan dalam database
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 1)->where('thalch', 1)
+            ->update(['output_1' => $p1 * $p3 * $p7 * $p11 * 100]); //1 1 1 1
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 0)->where('thalch', 0)
+            ->update(['output_1' => $p1 * $p3 * $p9 * $p13 * 100]); //1 0 0 1
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 0)->where('thalch', 1)
+            ->update(['output_1' => $p1 * $p3 * $p9 * $p11 * 100]); //1 0 1 1
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 1)->where('thalch', 0)
+            ->update(['output_1' => $p1 * $p3 * $p7 * $p13 * 100]); //1 1 0 1
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 0)->where('thalch', 1)
+            ->update(['output_1' => $p1 * $p5 * $p9 * $p11 * 100]); //0 0 1 1
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 1)->where('thalch', 0)
+            ->update(['output_1' => $p1 * $p5 * $p7 * $p13 * 100]); //0 1 0 1
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 1)->where('thalch', 1)
+            ->update(['output_1' => $p1 * $p5 * $p7 * $p11 * 100]); //0 1 1 1
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 0)->where('thalch', 0)
+            ->update(['output_1' => $p1 * $p5 * $p9 * $p13 * 100]); //0 0 0 1
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 1)->where('thalch', 1)
+            ->update(['output_0' => $p2 * $p4 * $p8 * $p12 * 100]); //1 1 1 0
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 0)->where('thalch', 0)
+            ->update(['output_0' => $p2 * $p4 * $p10 * $p14 * 100]); //1 0 0 0
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 0)->where('thalch', 1)
+            ->update(['output_0' => $p2 * $p4 * $p10 * $p12 * 100]); //1 0 1 0
+        DB::table('bayes_output')->where('trestbps', 1)->where('chol', 1)->where('thalch', 0)
+            ->update(['output_0' => $p2 * $p4 * $p8 * $p14 * 100]); //1 1 0 0
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 0)->where('thalch', 1)
+            ->update(['output_0' => $p2 * $p6 * $p10 * $p12 * 100]); //0 0 1 0
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 1)->where('thalch', 0)
+            ->update(['output_0' => $p2 * $p6 * $p8 * $p14 * 100]); //0 1 0 0
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 1)->where('thalch', 1)
+            ->update(['output_0' => $p2 * $p6 * $p8 * $p12 * 100]); //0 1 1 0
+        DB::table('bayes_output')->where('trestbps', 0)->where('chol', 0)->where('thalch', 0)
+            ->update(['output_0' => $p2 * $p6 * $p10 * $p14 * 100]); //0 0 0 0
+
+        //Debugging kemungkinan total yaitu 1
+        // $debug = DB::table('bayes_output')->sum('output_1') + DB::table('bayes_output')->sum('output_0');
+        // dump($debug);
+
+        // membandingkan request user dengan hasil akhir yang ada di database
+        $hasil = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
         $outputAsli = $hasil . '%';
         return view('user.bayes', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
     }

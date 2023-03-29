@@ -57,6 +57,7 @@ class KmeansController extends Controller
             $mean1 = DB::table('data')->where('Class', 1)->avg('kolom1');
             $mean2 = DB::table('data')->where('Class', 1)->avg('kolom2');
             $mean3 = DB::table('data')->where('Class', 1)->avg('kolom3');
+
             DB::table('cluster')->where('id', 1)->update(['center1' => $mean1, 'center2' => $mean2, 'center3' => $mean3]);
             // Menghitung rata-rata untuk setiap kolom pada setiap cluster
             $mean4 = DB::table('data')->where('Class', 2)->avg('kolom1');
