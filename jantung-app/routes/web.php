@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BayesController;
+use App\Http\Controllers\ConfusionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KmeansController;
 use App\Http\Controllers\KmeanskeduaController;
@@ -30,3 +31,4 @@ Route::get('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
 
 
 Route::get('/bayes', [BayesController::class, 'output'])->name('bayes');
+Route::get('/confusionBayes', [ConfusionController::class, 'confusionBayes'])->name('confusionBayes');
