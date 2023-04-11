@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\BayesController;
+use App\Http\Controllers\ConfusionKmeansController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KmeansController;
-use App\Http\Controllers\KmeanskeduaController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -16,17 +16,17 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// home
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// kmeans
 Route::post('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
 Route::get('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
 
-
+// naives bayes
 Route::get('/bayes', [BayesController::class, 'output'])->name('bayes');
+
+// confusion matriks kmeans
+Route::get('/confusion-kmeans', [ConfusionKmeansController::class, 'confusionKmeans']);
