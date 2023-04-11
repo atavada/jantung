@@ -27,7 +27,8 @@
             <input type="text" class="form-control"  id="" name="output"/>
           </div>
           <div class="col-12">
-            <input type="submit" class="btn btn-primary float-end" id="tekan" value="Submit" />
+            <input type="submit" class="btn btn-primary" id="tekan" value="Submit" />
+            <a class="btn btn-warning" href="{{ route('confusionBayes') }}">CONFUSION MATRIKS</a>
           </div>
         </div>
         </form>

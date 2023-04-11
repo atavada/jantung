@@ -23,6 +23,7 @@
             </div>
             <div class="col-12">
               <button class="btn btn-primary" type="submit" name="submit" id="tombol">SUBMIT</button>
+              <a class="btn btn-warning" href="{{ route('confusionKmeans') }}">CONFUSION MATRIKS</a>
             </div>
           </div>
         </form>
