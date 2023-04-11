@@ -24,7 +24,11 @@
           </div>
           <div class="col-3 mb-3">
             <label class="form-label">Output yang Diprediksi (ya/tidak)</label>
-            <input type="text" class="form-control"  id="" name="output"/>
+            <select class="form-select" aria-label="Default select example">
+              <option selected></option>
+              <option value="1" name="output">ya</option>
+              <option value="2" name="output">tidak</option>
+            </select>
           </div>
           <div class="col-12">
             <input type="submit" class="btn btn-primary float-end" id="tekan" value="Submit" />
