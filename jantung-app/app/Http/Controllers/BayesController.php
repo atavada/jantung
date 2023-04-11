@@ -47,7 +47,7 @@ class BayesController extends Controller
             // Menyimpan hasil perubahan pada tabel naivebayes
             DB::table('naive_bayes')->where('id', $d->id)->update(['trestbps' => $new1, 'chol' => $new2, 'thalch' => $new3, 'num' => $new4]);
         }
-
+        dd($trestbps);
         //menghitung count dari output
         $countOutput1 = DB::table('naive_bayes')->where('num', 1)->count('num') / DB::table('naive_bayes')->count('num');
         $countOutput0 = DB::table('naive_bayes')->where('num', 0)->count('num') / DB::table('naive_bayes')->count('num');
@@ -130,7 +130,6 @@ class BayesController extends Controller
         $p13 = DB::table('naives')->where('id', 7)->value('output_1');
         $p14 = DB::table('naives')->where('id', 7)->value('output_0');
 
-
         //menghitung hasil akhir dengan 16 kemungkinan dan disimpan dalam database
         DB::table('bayes_output')->where('trestbps', 1)->where('chol', 1)->where('thalch', 1)
             ->update(['output_1' => ($p1 * $p3 * $p7 * $p11) / (($p1 * $p3 * $p7 * $p11) + ($p2 * $p4 * $p8 * $p12))]); //1 1 1 1
@@ -168,6 +167,21 @@ class BayesController extends Controller
         //Debugging kemungkinan total yaitu 8
         // $debug = DB::table('bayes_output')->sum('output_1') + DB::table('bayes_output')->sum('output_0');
         // dump($debug);
+
+        $data = DB::table('bayes_output')->get();
+        foreach ($data as $d) {
+            $id = $d->id;
+            $output1 = $d->output_1;
+            $output0 = $d->output_0;
+
+            if ($output1 > $output0) {
+                $prediction = 1;
+            } else {
+                $prediction = 0;
+            }
+            DB::table('bayes_output')->where('id', $d->id)->update(['prediction' => $prediction]);
+        }
+
         // membandingkan request user dengan hasil akhir yang ada di database
         $hasil = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
         $outputAsli = $hasil * 100 . '%';

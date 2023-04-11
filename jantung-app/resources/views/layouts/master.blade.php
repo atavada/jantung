@@ -51,7 +51,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="@yield('menu')">Home</a></li>
+          <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="#features">App Features</a></li>
           <li><a class="nav-link scrollto" href="#profil">Profil</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>

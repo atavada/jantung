@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ConfusionController extends Controller
+class ConfusionKmeansController extends Controller
 {
     public function confusionKmeans()
     {
@@ -88,12 +88,12 @@ class ConfusionController extends Controller
         DB::table('confusion_kmean')->where('teks', 'N')->update(['p_tidak_beresiko' => $TN]);
 
         // menghitung TPR, FPR, TNR, FNR, akurasi, presisi
-        $TPR = $TP / ($TP + $FN);
-        $FPR = $FP / ($FP + $TN);
-        $TNR = $TN / ($TN + $FP);
-        $FNR = $FN / ($FN + $TP);
-        $akurasi = ($TP + $TN) / ($TP + $TN + $FP + $FN);
-        $presisi = $TP / ($TP + $FP);
+        $TPR = $TP / ($TP + $FN);       // (True Positive Rate) = Recall
+        $FPR = $FP / ($FP + $TN);       // False Positive Rate
+        $TNR = $TN / ($TN + $FP);       // True Negative Rate
+        $FNR = $FN / ($FN + $TP);       // False Negative Rate
+        $akurasi = ($TP + $TN) / ($TP + $TN + $FP + $FN);       // ACC
+        $presisi = $TP / ($TP + $FP);                           // PPV
 
         // update data hasil confusion matriks
         DB::table('hasil_confusion_kmean')->where('id', 1)->update([

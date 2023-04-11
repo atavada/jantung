@@ -24,11 +24,7 @@
           </div>
           <div class="col-3 mb-3">
             <label class="form-label">Output yang Diprediksi (ya/tidak)</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected></option>
-              <option value="1" name="output">ya</option>
-              <option value="2" name="output">tidak</option>
-            </select>
+            <input type="text" class="form-control"  id="" name="output"/>
           </div>
           <div class="col-12">
             <input type="submit" class="btn btn-primary float-end" id="tekan" value="Submit" />
@@ -42,7 +38,7 @@
 <div class="container mt-5 mb-5 " id="hide2">
   <div class="card border-0 shadow">
     <div class="card-body p-5">
-      <h5 class="card-title text-center">Hasil Diagnosa 2</h5>
+      <h5 class="card-title text-center">Hasil Diagnosa </h5>
       <hr>
       <div class="mb-5">
         <table class="table table-striped-columns">
@@ -78,7 +74,7 @@
           </tbody>
         </table>
       </div>
-    </div>
   </div>
 </div>
+
 @endsection

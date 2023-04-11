@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\BayesController;
+use App\Http\Controllers\ConfusionController;
 use App\Http\Controllers\ConfusionKmeansController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KmeansController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -19,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 // home
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // kmeans
 Route::post('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
@@ -29,4 +31,7 @@ Route::get('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
 Route::get('/bayes', [BayesController::class, 'output'])->name('bayes');
 
 // confusion matriks kmeans
-Route::get('/confusion-kmeans', [ConfusionKmeansController::class, 'confusionKmeans']);
+Route::get('/confusion-kmeans', [ConfusionKmeansController::class, 'confusionKmeans'])->name('confusionKmeans');
+
+// confusion matriks bayes
+Route::get('/confusion-bayes', [ConfusionController::class, 'confusionBayes'])->name('confusionBayes');
