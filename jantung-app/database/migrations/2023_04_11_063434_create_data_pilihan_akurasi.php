@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_pilihan_bayes', function (Blueprint $table) {
+        Schema::create('data_pilihan_kmean', function (Blueprint $table) {
             $table->id();
             $table->integer('trestbps');
             $table->integer('chol');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_pilihan_bayes');
+        Schema::dropIfExists('data_pilihan_kmean');
     }
 };
