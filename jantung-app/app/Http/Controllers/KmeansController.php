@@ -92,16 +92,16 @@ class KmeansController extends Controller
         if (($tekananDarah <= $getTekananDarah1) && ($kolestrol <= $getKolestrol1) && ($detakjantung <= $getDetakJantung1)) {
             $resiko = "tidak beresiko";
         } else if (($tekananDarah >= $getTekananDarah2) && ($kolestrol >= $getKolestrol2) && ($detakjantung >= $getDetakJantung2)) {
-            $resiko = "Resiko Tinggi";
+            $resiko = "Beresiko";
         } else {
             $jarak1 = sqrt(pow(($tekananDarah - $getTekananDarah1), 2) + pow(($kolestrol - $getKolestrol1), 2) + pow(($detakjantung - $getDetakJantung1), 2));
             $jarak2 = sqrt(pow(($tekananDarah - $getTekananDarah2), 2) + pow(($kolestrol - $getKolestrol2), 2) + pow(($detakjantung - $getDetakJantung2), 2));
             if ($jarak1 < $jarak2) {
                 $resiko = "Tidak Beresiko";
             } else if ($jarak1 == $jarak2) {
-                $resiko = "Resiko rendah";
+                $resiko = "Beresiko";
             } else {
-                $resiko = "Resiko rendah";
+                $resiko = "Beresiko";
             }
         }
         return view('user.kmeans', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung'));
