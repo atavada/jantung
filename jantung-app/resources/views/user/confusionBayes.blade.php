@@ -34,7 +34,7 @@
   <div class="container mt-5 mb-5 " id="hide2">
     <div class="card border-0 shadow">
       <div class="card-body p-5">
-        <h5 class="card-title text-center">Tabel Confusion</h5>
+        <h5 class="card-title text-center">Hasil</h5>
         <hr>
         <div class="mb-5">
           <table class="table table-striped-columns">
