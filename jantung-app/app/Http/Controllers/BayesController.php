@@ -105,14 +105,11 @@ class BayesController extends Controller
             $new3 = 0;
         }
 
-        // if ($output == "ya") {
-        //     $new4 = "output_1";
-        // } else {
-        //     $new4 = "output_0";
-        // }
-
-        $new4 = "output_1";
-        $new5 = "output_0";
+        if ($output == "ya") {
+            $new4 = "output_1";
+        } else {
+            $new4 = "output_0";
+        }
 
         // output
         $p1 = DB::table('naives')->where('id', 1)->value('output_1');
@@ -187,10 +184,8 @@ class BayesController extends Controller
         }
 
         // membandingkan request user dengan hasil akhir yang ada di database
-        $hasil1 = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
-        $hasil2 = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new5);
-        $outputAsli1 = $hasil1 * 100 . '%';
-        $outputAsli0 = $hasil2 * 100 . '%';
-        return view('user.bayes', compact('outputAsli1', 'outputAsli0', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
+        $hasil = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
+        $outputAsli = $hasil * 100 . '%';
+        return view('user.bayes', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
     }
 }
