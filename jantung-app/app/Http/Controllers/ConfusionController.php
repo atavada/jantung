@@ -9,8 +9,10 @@ class ConfusionController extends Controller
 {
     public function confusionBayes()
     {
+        // mengambil data
         $data1 = DB::table('bayes_output')->get();
         $data_pilihan = DB::table('data_pilihan_bayes')->get();
+
         // menentukan output predictin dari data pilahan bersasarkan database dari prediction pada tebel bayes_output
         foreach ($data1 as $d) {
             $id = $d->id;

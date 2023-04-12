@@ -88,10 +88,10 @@ class ConfusionKmeansController extends Controller
         DB::table('confusion_kmean')->where('teks', 'N')->update(['p_tidak_beresiko' => $TN]);
 
         // menghitung TPR, FPR, TNR, FNR, akurasi, presisi
-        $TPR = $TP / ($TP + $FN);       // (True Positive Rate) = Recall
-        $FPR = $FP / ($FP + $TN);       // False Positive Rate
-        $TNR = $TN / ($TN + $FP);       // True Negative Rate
-        $FNR = $FN / ($FN + $TP);       // False Negative Rate
+        $TPR = $TP / ($TP + $FN);                               // True Positive Rate = Recall
+        $FPR = $FP / ($FP + $TN);                               // False Positive Rate
+        $TNR = $TN / ($TN + $FP);                               // True Negative Rate
+        $FNR = $FN / ($FN + $TP);                               // False Negative Rate
         $akurasi = ($TP + $TN) / ($TP + $TN + $FP + $FN);       // ACC
         $presisi = $TP / ($TP + $FP);                           // PPV
 
