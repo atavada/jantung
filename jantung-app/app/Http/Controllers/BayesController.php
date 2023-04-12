@@ -185,7 +185,8 @@ class BayesController extends Controller
 
         // membandingkan request user dengan hasil akhir yang ada di database
         $hasil = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
+        $hasil1 = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value('prediction');
         $outputAsli = $hasil * 100 . '%';
-        return view('user.bayes', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
+        return view('user.bayes', compact('outputAsli', 'hasil1', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
     }
 }

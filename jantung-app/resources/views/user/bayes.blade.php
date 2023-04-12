@@ -71,6 +71,7 @@
           <tbody>
             <tr>
               <td scope="row">{{ $outputAsli }}</td>
+              <td scope="row">{{ $hasil1 }}</td>
             </tr>
           </tbody>
         </table>
