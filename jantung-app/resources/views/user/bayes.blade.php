@@ -12,19 +12,19 @@
           @csrf
           <div class="col-3 mb-3">
             <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
-            <input type="text" class="form-control"  id="" name="tekdar" />
+            <input type="text" class="form-control"  id="" name="tekdar" value="" />
           </div>
           <div class="col-3 mb-3">
             <label class="form-label">Kolesterol (mg/dl)</label>
-            <input type="text" class="form-control"  id="" name="kol"/>
+            <input type="text" class="form-control"  id="" name="kol" value=""/>
           </div>
           <div class="col-3 mb-3">
             <label class="form-label">Detak Jantung Maksimum (mm/hg)</label>
-            <input type="text" class="form-control"  id="" name="demak"/>
+            <input type="text" class="form-control"  id="" name="demak" value=""/>
           </div>
           <div class="col-3 mb-3">
             <label class="form-label">Output yang Diprediksi (ya/tidak)</label>
-            <input type="text" class="form-control"  id="" name="output"/>
+            <input type="text" class="form-control"  id="" name="output" value=""/>
           </div>
           <div class="col-12">
             <input type="submit" class="btn btn-primary" id="tekan" value="Submit" />
@@ -71,7 +71,6 @@
           <tbody>
             <tr>
               <td scope="row">{{ $outputAsli }}</td>
-              <td scope="row">{{ $hasil1 }}</td>
             </tr>
           </tbody>
         </table>
