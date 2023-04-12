@@ -10,6 +10,7 @@ class ConfusionController extends Controller
     public function confusionBayes()
     {
         $data1 = DB::table('bayes_output')->get();
+        $data_pilihan = DB::table('data_pilihan_bayes')->get();
         foreach ($data1 as $d) {
             $id = $d->id;
             $trestbps = $d->trestbps;
@@ -18,6 +19,31 @@ class ConfusionController extends Controller
             $prediction = $d->prediction;
 
             DB::table('data_pilihan_bayes')->where('trestbps', $trestbps)->where('chol', $chol)->where('thalch', $thalch)->update(['output_prediction' => $prediction]);
+        }
+
+        foreach ($data_pilihan as $dp) {
+            $id = $dp->id;
+            $trestbps = $dp->trestbps;
+            $chol = $dp->chol;
+            $thalch = $dp->thalch;
+            $aktual = $dp->output_asli;
+            $prediksi = $dp->output_prediction;
+
+            if ($aktual == $prediksi) {
+                if ($aktual == 1) {
+                    $hasil = "TP";
+                } else {
+                    $hasil = "TN";
+                }
+            } else {
+                if ($aktual == 1) {
+                    $hasil = "FN";
+                } else {
+                    $hasil = "FP";
+                }
+            }
+
+            DB::table('data_pilihan_bayes')->where('id', $id)->update(['hasil' => $hasil]);
         }
 
         $TP = DB::table('data_pilihan_bayes')->where('output_asli', 1)->where('output_prediction', 1)->count();
