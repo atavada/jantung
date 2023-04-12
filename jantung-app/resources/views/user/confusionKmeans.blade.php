@@ -4,7 +4,7 @@
 <div class="container mt-5 mb-5 " id="hide2">
     <div class="card border-0 shadow">
       <div class="card-body p-5">
-        <h5 class="card-title text-center">Tabel Confusion Bayes</h5>
+        <h5 class="card-title text-center">Tabel Confusion Kmean</h5>
         <hr>
         <div class="mb-5">
           <table class="table table-striped-columns">
@@ -34,7 +34,7 @@
   <div class="container mt-5 mb-5 " id="hide2">
     <div class="card border-0 shadow">
       <div class="card-body p-5">
-        <h5 class="card-title text-center">Tabel Confusion Bayes</h5>
+        <h5 class="card-title text-center">Tabel Confusion Kmean</h5>
         <hr>
         <div class="mb-5">
           <table class="table table-striped-columns">
@@ -47,9 +47,9 @@
             </thead>
             <tbody>
               <tr>
-                <td>{{ $Recall }}</td>
-                <td>{{ $Akurasi }}</td>
-                <td>{{ $Presisi }}</td>
+                <td>{{ $outputRecall }}</td>
+                <td>{{ $outputAkurasi }}</td>
+                <td>{{ $outputPresisi }}</td>
               </tr>
             </tbody>
           </table>

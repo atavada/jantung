@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hasil_confusion_bayes', function (Blueprint $table) {
+        Schema::create('hasil_confusion_kmean', function (Blueprint $table) {
             $table->id();
             $table->float('TPR');
             $table->float('FPR');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hasil_confusion_bayes');
+        Schema::dropIfExists('hasil_confusion_kmean');
     }
 };

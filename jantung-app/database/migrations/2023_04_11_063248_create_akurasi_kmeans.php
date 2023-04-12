@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('confusion_bayes', function (Blueprint $table) {
+        Schema::create('confusion_kmean', function (Blueprint $table) {
             $table->id();
             $table->string('teks');
             $table->integer('p_beresiko');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('confusion_bayes');
+        Schema::dropIfExists('confusion_kmean');
     }
 };
