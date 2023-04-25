@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class BayesController extends Controller
 {
+    public function index()
+    {
+        return view('user.bayes');
+    }
     public function bayes()
     {
         $data = DB::table('dataset')->get();
@@ -192,6 +196,6 @@ class BayesController extends Controller
         $hasil = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
         $outputAsli = $hasil * 100 . '%';
         DB::table('data_pilihan_bayes')->insert(['trestbps' => $new1, 'chol' => $new2, 'thalch' => $new3, 'output_asli' => $new5, 'output_prediction' => 0, 'hasil' => 0]);
-        return view('user.bayes', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
+        return view('user.bayesOutput', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
     }
 }

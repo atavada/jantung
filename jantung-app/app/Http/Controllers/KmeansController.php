@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class KmeansController extends Controller
 {
+    public function index()
+    {
+        return view('user.kmeans');
+    }
     public function kmeans()
     {
         $maxIterasi = 10;
@@ -109,7 +113,7 @@ class KmeansController extends Controller
                 $resiko1 = 1;
             }
         }
-        DB::table('data_pilihan_bayes')->insert(['trestbps' => $tekananDarah, 'chol' => $kolestrol, 'thalch' => $detakjantung, 'output_asli' => $resiko1, 'output_prediction' => 0, 'hasil' => 0]);
-        return view('user.kmeans', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung'));
+        DB::table('data_pilihan_kmean')->insert(['trestbps' => $tekananDarah, 'chol' => $kolestrol, 'thalch' => $detakjantung, 'output_asli' => $resiko1, 'output_prediction' => 0, 'hasil' => 0]);
+        return view('user.kmeansOutput', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung'));
     }
 }
