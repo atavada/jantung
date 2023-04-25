@@ -19,10 +19,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/', function () {
+    return view('user.index');
+});
+
 Auth::routes();
 
 // home
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // kmeans
 Route::get('/kmeans', [KmeansController::class, 'index'])->name('kmeans');
