@@ -18,17 +18,19 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Auth::routes();
 
 // home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // kmeans
-Route::post('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
-Route::get('/kmeans', [KmeansController::class, 'output'])->name('kmeans');
+Route::get('/kmeans', [KmeansController::class, 'index'])->name('kmeans');
+Route::post('/kmeansOutput', [KmeansController::class, 'output'])->name('kmeansOutput');
 
 // naives bayes
-Route::get('/bayes', [BayesController::class, 'output'])->name('bayes');
+Route::get('/bayes', [BayesController::class, 'index'])->name('bayes');
+Route::post('/bayesOutput', [BayesController::class, 'output'])->name('outputBayes');
 
 // confusion matriks kmeans
 Route::get('/confusion-kmeans', [ConfusionKmeansController::class, 'confusionKmeans'])->name('confusionKmeans');

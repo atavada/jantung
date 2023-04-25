@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class BayesController extends Controller
 {
+    public function index()
+    {
+        return view('user.bayes');
+    }
     public function bayes()
     {
         $data = DB::table('dataset')->get();
@@ -106,6 +110,11 @@ class BayesController extends Controller
         }
 
         if ($output == "ya") {
+            $new5 = 1;
+        } else {
+            $new5 = 0;
+        }
+        if ($output == "ya") {
             $new4 = "output_1";
         } else {
             $new4 = "output_0";
@@ -185,8 +194,8 @@ class BayesController extends Controller
 
         // membandingkan request user dengan hasil akhir yang ada di database
         $hasil = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
-        $hasil1 = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value('prediction');
         $outputAsli = $hasil * 100 . '%';
-        return view('user.bayes', compact('outputAsli', 'hasil1', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
+        DB::table('data_pilihan_bayes')->insert(['trestbps' => $new1, 'chol' => $new2, 'thalch' => $new3, 'output_asli' => $new5, 'output_prediction' => 0, 'hasil' => 0]);
+        return view('user.bayesOutput', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
     }
 }

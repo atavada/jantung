@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class KmeansController extends Controller
 {
+    public function index()
+    {
+        return view('user.kmeans');
+    }
     public function kmeans()
     {
         $maxIterasi = 10;
@@ -91,19 +95,25 @@ class KmeansController extends Controller
 
         if (($tekananDarah <= $getTekananDarah1) && ($kolestrol <= $getKolestrol1) && ($detakjantung <= $getDetakJantung1)) {
             $resiko = "tidak beresiko";
+            $resiko1 = 0;
         } else if (($tekananDarah >= $getTekananDarah2) && ($kolestrol >= $getKolestrol2) && ($detakjantung >= $getDetakJantung2)) {
             $resiko = "Beresiko";
+            $resiko1 = 1;
         } else {
             $jarak1 = sqrt(pow(($tekananDarah - $getTekananDarah1), 2) + pow(($kolestrol - $getKolestrol1), 2) + pow(($detakjantung - $getDetakJantung1), 2));
             $jarak2 = sqrt(pow(($tekananDarah - $getTekananDarah2), 2) + pow(($kolestrol - $getKolestrol2), 2) + pow(($detakjantung - $getDetakJantung2), 2));
             if ($jarak1 < $jarak2) {
                 $resiko = "Tidak Beresiko";
+                $resiko1 = 0;
             } else if ($jarak1 == $jarak2) {
                 $resiko = "Beresiko";
+                $resiko1 = 1;
             } else {
                 $resiko = "Beresiko";
+                $resiko1 = 1;
             }
         }
-        return view('user.kmeans', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung'));
+        DB::table('data_pilihan_kmean')->insert(['trestbps' => $tekananDarah, 'chol' => $kolestrol, 'thalch' => $detakjantung, 'output_asli' => $resiko1, 'output_prediction' => 0, 'hasil' => 0]);
+        return view('user.kmeansOutput', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung'));
     }
 }
