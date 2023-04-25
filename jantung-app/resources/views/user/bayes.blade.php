@@ -14,7 +14,7 @@
       <h5 class="card-title text-center">Naive Bayes</h5>
       <hr />
       
-        <form action="{{  route('outputBayes') }}" method="GET">
+        <form action="{{  route('outputBayes') }}" method="POST">
           <div class="row mt-5">
           @csrf
           <div class="col-3 mb-3">

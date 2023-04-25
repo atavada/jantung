@@ -30,7 +30,7 @@ Route::post('/kmeansOutput', [KmeansController::class, 'output'])->name('kmeansO
 
 // naives bayes
 Route::get('/bayes', [BayesController::class, 'index'])->name('bayes');
-Route::get('/bayesOutput', [BayesController::class, 'output'])->name('outputBayes');
+Route::post('/bayesOutput', [BayesController::class, 'output'])->name('outputBayes');
 
 // confusion matriks kmeans
 Route::get('/confusion-kmeans', [ConfusionKmeansController::class, 'confusionKmeans'])->name('confusionKmeans');
