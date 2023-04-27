@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-<<<<<<< HEAD
 // home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -46,13 +45,6 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Auth::routes();
 
-=======
-Auth::routes();
-
-// home
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
->>>>>>> parent of 1d15000 (update biar harun senang)
 // kmeans
 Route::get('/kmeans', [KmeansController::class, 'index'])->name('kmeans');
 Route::post('/kmeansOutput', [KmeansController::class, 'output'])->name('kmeansOutput');
