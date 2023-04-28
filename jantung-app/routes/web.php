@@ -3,6 +3,7 @@
 use App\Http\Controllers\BayesController;
 use App\Http\Controllers\ConfusionController;
 use App\Http\Controllers\ConfusionKmeansController;
+use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KmeansController;
 use App\Http\Controllers\User\HomeController;
@@ -58,3 +59,6 @@ Route::get('/confusion-kmeans', [ConfusionKmeansController::class, 'confusionKme
 
 // confusion matriks bayes
 Route::get('/confusion-bayes', [ConfusionController::class, 'confusionBayes'])->name('confusionBayes');
+
+//contact
+Route::post('/contact', [ContactsController::class, 'store'])->name('contacts');

@@ -15,6 +15,11 @@
                 <img class="w-100" src="{{ asset('landpage/img/carousel-1.jpg') }}" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
+                            @if (session()->has('pesan'))
+                                <div class="alert alert-success d-inline-block">
+                                {{ session()->get('pesan') }}
+                                </div>
+                            @endif
                         <div class="row justify-content-start">
                             <div class="col-lg-8">
                                 <p
@@ -406,41 +411,44 @@
                         </p>
                         <h1 class="display-5 mb-5">ADH FORM</h1>
                     </div>
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="name">
-                                <label for="name">Nama</label>
+                    <form action="{{ route("contacts") }}" method="POST">
+                        @csrf
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="name" name="nama">
+                                    <label for="name">Nama</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="mail" placeholder="mail">
-                                <label for="mail">you@gmail.com</label>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="email" name="email">
+                                    <label for="mail">you@gmail.com</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="hp" placeholder="hp">
-                                <label for="mobile">No Hp</label>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="hp" placeholder="hp" name="hp">
+                                    <label for="mobile">No Hp</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="subjek" placeholder="subjek">
-                                <label for="subject">Subjek</label>
+                            <div class="col-sm-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subjek" placeholder="subjek" name="subjek">
+                                    <label for="subject">Subjek</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Keluhan" id="Keluhan"
-                                    style="height: 100px"></textarea>
-                                <label for="message">Masukkan Keluhan</label>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Keluhan" id="Keluhan"
+                                        style="height: 100px" name="keluhan"></textarea>
+                                    <label for="message">Masukkan Keluhan</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button class="btn btn-primary w-100 py-3" type="Kirim">Kirim</button>
-                        </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Kirim</button>
+                            </div>
+                    </form>
                     </div>
                 </div>
             </div>

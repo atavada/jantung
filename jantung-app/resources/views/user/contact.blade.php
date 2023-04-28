@@ -36,40 +36,41 @@
                         kami siap membantu Anda menyelesaikan masalah tersebut dengan cepat dan tepat sasaran.
                         Kami berusaha memberikan pengalaman pelanggan terbaik, dan keluhan Anda adalah bagian penting dari
                         itu.
-                    <form>
+                    <form action="{{ route("contacts") }}" method="POST">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="name">
+                                    <input type="text" class="form-control" id="name" placeholder="name" name="nama">
                                     <label for="name">Nama</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="mail" placeholder="mail">
+                                    <input type="email" class="form-control" id="mail" placeholder="mail" name="email">
                                     <label for="mail">you@gmail.com</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="hp" placeholder="hp">
+                                    <input type="text" class="form-control" id="hp" placeholder="hp" name="hp">
                                     <label for="mobile">No Hp</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subjek" placeholder="subjek">
+                                    <input type="text" class="form-control" id="subjek" placeholder="subjek" name="subjek">
                                     <label for="subject">Subjek</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Keluhan" id="Keluhan" style="height: 100px"></textarea>
+                                    <textarea class="form-control" placeholder="Keluhan" id="Keluhan" style="height: 100px" name="keluhan"></textarea>
                                     <label for="message">Masukkan Keluhan</label>
                                 </div>
                             </div>
                             <div class="col-12 text-center">
-                                <button class="btn btn-primary w-100 py-3" type="Kirim">Kirim</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit">Kirim</button>
                             </div>
                         </div>
                     </form>
