@@ -5,7 +5,7 @@ use App\Http\Controllers\ConfusionController;
 use App\Http\Controllers\ConfusionKmeansController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KmeansController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -19,14 +19,31 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('user.index');
-});
+// home
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// about
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+
+// service
+Route::get('/service', [HomeController::class, 'service'])->name('service');
+
+// detect
+Route::get('/detect', [HomeController::class, 'detect'])->name('detect');
+
+// feature
+Route::get('/feature', [HomeController::class, 'feature'])->name('feature');
+
+// team
+Route::get('/team', [HomeController::class, 'team'])->name('team');
+
+// testimonial
+Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
+
+// contact
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Auth::routes();
-
-// home
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // kmeans
 Route::get('/kmeans', [KmeansController::class, 'index'])->name('kmeans');

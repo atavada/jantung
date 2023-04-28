@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('menu', '/home')
+
 @section('content')
 <div class="container mt-5 mb-5 " id="hide2">
     <div class="card border-0 shadow">
