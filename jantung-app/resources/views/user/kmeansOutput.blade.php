@@ -1,5 +1,4 @@
 @extends('layouts.master')
-@section('menu', '/home')
 <style>
   footer{
     position: fixed;

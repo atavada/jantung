@@ -2,7 +2,6 @@
 
 @section('content')
 <!-- Carousel Start -->
-
 <style>
     .justify {
     text-align: justify;
@@ -23,7 +22,7 @@
                                     ADH | Heart Disease</p>
                                 <h1 class="display-1 mb-4 animated slideInDown">AYO CEK KESEHATANMU
                                 </h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">K-Means</a>
+                                <a href="{{ route('kmeans') }}" class="btn btn-primary py-3 px-5 animated slideInDown">K-Means</a>
                             </div>
                         </div>
                     </div>
@@ -41,7 +40,7 @@
                                 <h1 class="display-1 mb-4 animated slideInDown">
                                     PENTINGNYA KESEHATAN
                                 </h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Naive Bayes</a>
+                                <a href="{{ route('bayes') }}" class="btn btn-primary py-3 px-5 animated slideInDown">Naive Bayes</a>
                             </div>
                         </div>
                     </div>

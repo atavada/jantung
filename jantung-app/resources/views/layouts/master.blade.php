@@ -76,17 +76,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="{{ route('home') }}" class="nav-item nav-link active">Beranda</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">Tentang Kami</a>
-                    <a href="{{ route('service') }}" class="nav-item nav-link">Fitur</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">Layanan</a>
+                    <a href="{{ route('home') }}" class="nav-item nav-link {{ setActive('/') }}">Beranda</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link {{ setActive('about') }}">Tentang Kami</a>
+                    <a href="{{ route('service') }}" class="nav-item nav-link {{ setActive('service') }}">Fitur</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link {{ setActive('contact') }}">Layanan</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Masuk</a>
+                        <a href="#" class="nav-link dropdown-toggle {{ setActive('detect') }}" data-bs-toggle="dropdown">Masuk</a>
                         <div class="dropdown-menu border-light m-0">
 
                             {{-- ketika keluar hanya ada masuk dan daftar --}}
-                            <a href="{{ route('project') }}" class="dropdown-item">Masuk</a>
-                            <a href="{{ route('project') }}" class="dropdown-item">Daftar</a>
+                            <a href="{{ route('detect') }}" class="dropdown-item">Masuk</a>
+                            <a href="{{ route('detect') }}" class="dropdown-item">Daftar</a>
 
                             {{-- ketika masuk hanya ada keluar --}}
                             {{-- <a href="{{ route('team') }}" class="dropdown-item">Keluar</a> --}}
@@ -183,6 +183,7 @@
 
 
     <!-- JavaScript Libraries -->
+    <script src="https://kit.fontawesome.com/53d82b54ee.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('landpage/lib/wow/wow.min.js') }}"></script>

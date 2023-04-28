@@ -28,8 +28,8 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 // service
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 
-// project
-Route::get('/project', [HomeController::class, 'project'])->name('project');
+// detect
+Route::get('/detect', [HomeController::class, 'detect'])->name('detect');
 
 // feature
 Route::get('/feature', [HomeController::class, 'feature'])->name('feature');
