@@ -21,13 +21,13 @@ class ConfusionKmeansController extends Controller
             $chol = $k->kolom2;
             $thalch = $k->kolom3;
             $class = $k->Class;
-            
+
             if ($class == 1) {
                 $output_kmeans = 0;
             } else {
                 $output_kmeans = 1;
             }
-            
+
             // DB::table('data_pilihan_kmean')->insert(['id' => $id, 'trestbps' => $trestbps, 'chol' => $chol, 'thalch' => $thalch, 'output_prediction' => $output_kmeans]);
         }
 

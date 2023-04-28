@@ -19,7 +19,7 @@
               <tr>
                 <th scope="col">Tekanan Darah Sistolik</th>
                 <th scope="col">Kolesterol</th>
-                <th scope="col">Gula Darah Puasa</th>
+                <th scope="col">Detak Jantung Maksimum</th>
               </tr>
             </thead>
             <tbody>
@@ -42,6 +42,31 @@
             <tbody>
               <tr>
                 <td class="text-center">{{ $resiko }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+        <div class="mb-5">
+          <table class="table table-striped-columns">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Rekomendasi Obat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    @forelse ($hasil as $value)
+                    <li class="text-center">
+                        {{ $value }}
+                    </li>
+                  </ul>
+                  @empty
+                    <p>Anda sudah Sehat</p>
+                  @endforelse
+                </td>
               </tr>
             </tbody>
           </table>

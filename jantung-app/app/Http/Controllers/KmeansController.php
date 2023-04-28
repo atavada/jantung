@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\Empty_;
 
 class KmeansController extends Controller
 {
@@ -113,7 +114,25 @@ class KmeansController extends Controller
                 $resiko1 = 1;
             }
         }
+
+        //insert inputan user ke dalam table pilihan kmeans
         DB::table('data_pilihan_kmean')->insert(['trestbps' => $tekananDarah, 'chol' => $kolestrol, 'thalch' => $detakjantung, 'output_asli' => $resiko1, 'output_prediction' => 0, 'hasil' => 0]);
-        return view('user.kmeansOutput', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung'));
+
+
+
+        $obatTrestbps = DB::table('obats')->pluck('trestbps');
+        $obatChol = DB::table('obats')->pluck('chol');
+        $obatThalch = DB::table('obats')->pluck('thalch');
+
+        if ($resiko == "Beresiko" && $tekananDarah >= 136) {
+            $hasil = $obatTrestbps;
+        } elseif ($resiko == "Beresiko" && $kolestrol >= 306) {
+            $hasil = $obatChol;
+        } elseif ($resiko == "Beresiko" && $detakjantung >= 140) {
+            $hasil = $obatThalch;
+        } else {
+            $hasil = ['hasil' => "Anda sudah Sehat"];
+        }
+        return view('user.kmeansOutput', compact('resiko', 'tekananDarah', 'kolestrol', 'detakjantung', 'hasil'));
     }
 }

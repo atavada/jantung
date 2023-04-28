@@ -195,7 +195,22 @@ class BayesController extends Controller
         // membandingkan request user dengan hasil akhir yang ada di database
         $hasil = DB::table('bayes_output')->where('trestbps', $new1)->where('chol', $new2)->where('thalch', $new3)->value($new4);
         $outputAsli = $hasil * 100 . '%';
+        // menambahkan inputan user ke dalam table pilihan bayes
         DB::table('data_pilihan_bayes')->insert(['trestbps' => $new1, 'chol' => $new2, 'thalch' => $new3, 'output_asli' => $new5, 'output_prediction' => 0, 'hasil' => 0]);
-        return view('user.bayesOutput', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output'));
+
+        $obatTrestbps = DB::table('obats')->pluck('trestbps');
+        $obatChol = DB::table('obats')->pluck('chol');
+        $obatThalch = DB::table('obats')->pluck('thalch');
+        if ($new1 == 1 && $new2 == 0 && $new3 = 0) {
+            $hasil1 = $obatTrestbps;
+        } elseif ($new1 == 1 && $new2 == 1 && $new3 = 0) {
+            $hasil1 = $obatTrestbps . $obatChol;
+        } elseif ($new1 == 0 && $new2 == 1 && $new3 = 0) {
+            $hasil1 = $obatThalch;
+        } else {
+            $hasil1 = ['hasil' => 'Anda Sudah Sehat'];
+        }
+
+        return view('user.bayesOutput', compact('outputAsli', 'tekananDarah', 'kolestrol', 'detakjantung', 'output', 'hasil1'));
     }
 }

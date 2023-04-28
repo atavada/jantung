@@ -47,6 +47,31 @@
           </tbody>
         </table>
       </div>
+      <hr>
+      <div class="mb-5">
+          <table class="table table-striped-columns">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Rekomendasi Obat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    @forelse ($hasil1 as $value)
+                    <li class="text-center">
+                        {{ $value }}
+                    </li>
+                  </ul>
+                  @empty
+                    <p>Anda sudah Sehat</p>
+                  @endforelse
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
   </div>
 </div>
 </div>
