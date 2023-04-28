@@ -35,7 +35,7 @@
                             <input type="number" class="form-control" id="" name="tekdar" autocomplete="off" />
                         </div>
                         <div class="col-3 mb-3">
-                            <label class="form-label">Kolesterol / Gula Darah Normal (mg/dl)</label>
+                            <label class="form-label">Kolesterol / Gula Darah (mg/dl)</label>
                             <input type="number" class="form-control" id="" name="kol" autocomplete="off" />
                         </div>
                         <div class="col-3 mb-3">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-12">
                             <input type="submit" class="btn btn-primary" id="tekan" value="Submit" />
-                            <a class="btn btn-warning" href="{{ route('confusionBayes') }}">CONFUSION MATRIKS</a>
+                            <a class="btn btn-warning" href="{{ route('confusionBayes') }}">Confusion Matriks</a>
                         </div>
                     </div>
                 </form>
