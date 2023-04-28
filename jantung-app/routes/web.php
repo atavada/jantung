@@ -43,6 +43,7 @@ Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testim
 
 // contact
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [ContactsController::class, 'store'])->name('contacts');
 
 Auth::routes();
 
@@ -59,6 +60,3 @@ Route::get('/confusion-kmeans', [ConfusionKmeansController::class, 'confusionKme
 
 // confusion matriks bayes
 Route::get('/confusion-bayes', [ConfusionController::class, 'confusionBayes'])->name('confusionBayes');
-
-//contact
-Route::post('/contact', [ContactsController::class, 'store'])->name('contacts');

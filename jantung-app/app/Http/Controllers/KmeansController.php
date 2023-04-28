@@ -8,10 +8,16 @@ use PhpParser\Node\Expr\Empty_;
 
 class KmeansController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('user.kmeans');
     }
+    
     public function kmeans()
     {
         $maxIterasi = 10;

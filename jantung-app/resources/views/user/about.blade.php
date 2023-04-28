@@ -181,11 +181,12 @@
                     <div class="team-text">
                         <h4 class="mb-0">Ardha</h4>
                         <div class="team-social d-flex">
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                    class="fab fa-discord"></i></a>
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square rounded-circle mx-1" href="https://discordapp.com/users/tvd#7101">
+                                <i class="fab fa-discord"></i></a>
+                            <a class="btn btn-square rounded-circle mx-1" href="https://github.com/atavada">
+                                <i class="fab fa-github"></i></a>
+                            <a class="btn btn-square rounded-circle mx-1" href="https://www.instagram.com/_atvdd/">
+                                <i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -196,10 +197,11 @@
                     <div class="team-text">
                         <h4 class="mb-0">David</h4>
                         <div class="team-social d-flex">
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i
+                            <a class="btn btn-square rounded-circle mx-1" href="https://discordapp.com/users/David%20Alamsyah#2153"><i
                                     class="fab fa-discord"></i></a>
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i
+                            <a class="btn btn-square rounded-circle mx-1" href="https://github.com/DavidSatria29">
+                                <i class="fab fa-github"></i></a>
+                            <a class="btn btn-square rounded-circle mx-1" href="https://www.instagram.com/david_alamsyahh"><i
                                     class="fab fa-instagram"></i></a>
                         </div>
                     </div>
@@ -211,10 +213,11 @@
                     <div class="team-text">
                         <h4 class="mb-0">Harun</h4>
                         <div class="team-social d-flex">
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i
+                            <a class="btn btn-square rounded-circle mx-1" href="https://discordapp.com/users/Harsta#0557"><i
                                     class="fab fa-discord"></i></a>
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-github"></i></a>
-                            <a class="btn btn-square rounded-circle mx-1" href=""><i
+                            <a class="btn btn-square rounded-circle mx-1" href="https://github.com/Harunsatr">
+                                <i class="fab fa-github"></i></a>
+                            <a class="btn btn-square rounded-circle mx-1" href="https://www.instagram.com/harunsatr"><i
                                     class="fab fa-instagram"></i></a>
                         </div>
                     </div>

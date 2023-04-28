@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class ConfusionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function confusionBayes()
     {
         // mengambil data

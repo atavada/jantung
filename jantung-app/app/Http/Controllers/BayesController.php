@@ -7,10 +7,16 @@ use Illuminate\Support\Facades\DB;
 
 class BayesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('user.bayes');
     }
+    
     public function bayes()
     {
         $data = DB::table('dataset')->get();

@@ -80,18 +80,35 @@
                     <a href="{{ route('about') }}" class="nav-item nav-link {{ setActive('about') }}">Tentang Kami</a>
                     <a href="{{ route('service') }}" class="nav-item nav-link {{ setActive('service') }}">Fitur</a>
                     <a href="{{ route('contact') }}" class="nav-item nav-link {{ setActive('contact') }}">Layanan</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle {{ setActive('detect') }}" data-bs-toggle="dropdown">Masuk</a>
-                        <div class="dropdown-menu border-light m-0">
-
-                            {{-- ketika keluar hanya ada masuk dan daftar --}}
-                            <a href="{{ route('detect') }}" class="dropdown-item">Masuk</a>
-                            <a href="{{ route('detect') }}" class="dropdown-item">Daftar</a>
-
-                            {{-- ketika masuk hanya ada keluar --}}
-                            {{-- <a href="{{ route('team') }}" class="dropdown-item">Keluar</a> --}}
+                        
+                    @guest
+                        @if (Route::has('login'))
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle {{ setActive('detect') }}" data-bs-toggle="dropdown">Masuk</a>
+                            <div class="dropdown-menu border-light m-0">
+                                <a href="{{ route('detect') }}" class="dropdown-item">Masuk</a>
+                                <a href="{{ route('detect') }}" class="dropdown-item">Daftar</a>
+                            </div>
                         </div>
-                    </div>
+                        @endif
+                        @else
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle {{ setActive('kmeans', 'bayes', 'confusion-kmeans', 'confusion-bayes') }}" data-bs-toggle="dropdown">Hi, {{ auth()->user()->name }}</a>
+                            <div class="dropdown-menu border-light m-0">
+                                <a href="{{ route('kmeans') }}" class="dropdown-item">K-means</a>
+                                <a href="{{ route('bayes') }}" class="dropdown-item">Naive Bayes</a>
+                                <a href="{{ route('logout') }}" class="dropdown-item text-danger"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    <b>{{ __('Logout') }}</b>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
+                    @endguest
+
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
