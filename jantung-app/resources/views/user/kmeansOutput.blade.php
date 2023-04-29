@@ -26,22 +26,24 @@
                 <h5 class="card-title text-center">Hasil Diagnosa</h5>
                 <hr>
                 <div class="mb-5">
-                    <table class="table table-striped-columns">
-                        <thead>
-                            <tr>
-                                <th scope="col">Tekanan Darah Sistolik</th>
-                                <th scope="col">Kolesterol</th>
-                                <th scope="col">Detak Jantung Maksimum</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{ $tekananDarah }}</td>
-                                <td>{{ $kolestrol }}</td>
-                                <td>{{ $detakjantung }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-striped-columns">
+                            <thead>
+                                <tr>
+                                    <th>Tekanan Darah Sistolik</th>
+                                    <th>Kolesterol</th>
+                                    <th>Detak Jantung Maksimum</th>
+                                </tr>                              
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $tekananDarah }}</td>
+                                    <td>{{ $kolestrol }}</td>
+                                    <td>{{ $detakjantung }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <hr>
                 <div class="mb-5 mt-5">

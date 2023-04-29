@@ -30,24 +30,24 @@
                 <form action="{{ route('outputBayes') }}" method="POST">
                     <div class="row mt-5">
                         @csrf
-                        <div class="col-3 mb-3">
+                        <div class="col-12 col-sm-3 mb-3">
                             <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
                             <input type="number" class="form-control" id="" name="tekdar" autocomplete="off" />
                         </div>
-                        <div class="col-3 mb-3">
+                        <div class="col-12 col-sm-3 mb-3">
                             <label class="form-label">Kolesterol / Gula Darah (mg/dl)</label>
                             <input type="number" class="form-control" id="" name="kol" autocomplete="off" />
                         </div>
-                        <div class="col-3 mb-3">
+                        <div class="col-12 col-sm-3 mb-3">
                             <label class="form-label">Detak Jantung Maksimum (mm/hg)</label>
                             <input type="number" class="form-control" id="" name="demak" autocomplete="off" />
                         </div>
-                        <div class="col-3 mb-3">
+                        <div class="col-12 col-sm-3 mb-3">
                             <label class="form-label">Output yang Diprediksi (ya/tidak)</label>
                             <input type="text" class="form-control" id="" name="output" autocomplete="off" />
                         </div>
                         <div class="col-12">
-                            <input type="submit" class="btn btn-primary" id="tekan" value="Submit" />
+                            <input type="submit" class="btn btn-primary me-3" id="tekan" value="Submit" />
                             <a class="btn btn-warning" href="{{ route('confusionBayes') }}">Confusion Matriks</a>
                         </div>
                     </div>

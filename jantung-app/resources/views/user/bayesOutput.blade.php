@@ -26,25 +26,27 @@
                 <h5 class="card-title text-center">Hasil Diagnosa </h5>
                 <hr>
                 <div class="mb-5">
-                    <table class="table table-striped-columns">
-                        <thead>
-                            <tr>
-                                <th scope="col">Tekanan Darah Sistolik</th>
-                                <th scope="col">Kolesterol</th>
-                                <th scope="col">Detak jantung maksimum</th>
-                                <th scope="col">Output yang diinginkan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{ $tekananDarah }}</td>
-                                <td>{{ $kolestrol }}</td>
-                                <td>{{ $detakjantung }}</td>
-                                <td>{{ $output }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped-columns">
+                            <thead>
+                                <tr>
+                                    <th>Tekanan Darah Sistolik</th>
+                                    <th>Kolesterol</th>
+                                    <th>Detak jantung maksimum</th>
+                                    <th>Output yang diinginkan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $tekananDarah }}</td>
+                                    <td>{{ $kolestrol }}</td>
+                                    <td>{{ $detakjantung }}</td>
+                                    <td>{{ $output }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 <div class="mb-5 mt-5">
                     <table class="table table-striped-columns text-center">
                         <thead>

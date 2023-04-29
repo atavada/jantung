@@ -31,20 +31,20 @@
                 <form action="{{ route('kmeansOutput') }}" method="POST">
                     @csrf
                     <div class="row mt-5">
-                        <div class="col-4 mb-3">
+                        <div class="col-12 col-sm-4 mb-3">
                             <label class="form-label">Tekanan Darah Sistolik (mm/hg)</label>
                             <input type="number" class="form-control" id="" name="tekdar" autocomplete="off" />
                         </div>
-                        <div class="col-4 mb-3">
+                        <div class="col-12 col-sm-4 mb-3">
                             <label class="form-label">Kadar Kolesterol (mg/dl)</label>
                             <input type="number" class="form-control" id="" name="kol" autocomplete="off" />
                         </div>
-                        <div class="col-4 mb-3">
+                        <div class="col-12 col-sm-4 mb-3">
                             <label class="form-label">Detak Jantung Maksimum (mm/hg)</label>
                             <input type="number" class="form-control" id="" name="demax" autocomplete="off" />
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary" type="submit" name="submit" id="tombol">Submit</button>
+                            <button class="btn btn-primary me-3" type="submit" name="submit" id="tombol">Submit</button>
                             <a class="btn btn-warning" href="{{ route('confusionKmeans') }}">Confusion Matriks</a>
                         </div>
                     </div>
